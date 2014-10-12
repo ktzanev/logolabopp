@@ -16,9 +16,10 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
 **Exemples :**
 
 * Utilisation de la bibliothèque <code>logopp</code> : le résultat en [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_logo.pdf) et sa [source en LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_logo.tex).
-> Comme *fancyvrb* a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.pdf) et [la source LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.tex).
+  > Comme *fancyvrb* a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.pdf) et [la source LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.tex).
+
 * Lettre type du labo : le résultat en [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_lettre.pdf) et [sa source en LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_lettre.tex).
-> Si vous avez des problèmes avec la compilation de TiKz, il existe une version simplifiée du style [laboppnotikz.sty](http://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty). Pour pouvoir l'utiliser vous avez besoin de deux images en pdf [logonompp.pdf](http://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](http://ktzanev.github.io/logolabopp/latex/labofooter.pdf). Pour l'utilisation de ce style vous pouvez consulter le modèle [exemple_lettre_notikz.tex](http://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex), ainsi que le résultat de la compilation avec pdflatex [exemple_lettre_notikz.pdf](http://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf).
+  > Si vous avez des problèmes avec la compilation de TiKz, il existe une version simplifiée du style [laboppnotikz.sty](http://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty). Pour pouvoir l'utiliser vous avez besoin de deux images en pdf [logonompp.pdf](http://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](http://ktzanev.github.io/logolabopp/latex/labofooter.pdf). Pour l'utilisation de ce style vous pouvez consulter le modèle [exemple_lettre_notikz.tex](http://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex), ainsi que le résultat de la compilation avec pdflatex [exemple_lettre_notikz.pdf](http://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf).
 
 Word
 ----
