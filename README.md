@@ -1,7 +1,7 @@
 logolabopp
 ==========
 
-Le logo du laboratoire de mathématiques Paul Painlevé de l'université Lille 1
+Le logo du [laboratoire de mathématiques Paul Painlevé](http://math.univ-lille1.fr/) de l'[université Lille 1](http://www.univ-lille1.fr/)
 
 
 LaTeX
