@@ -3,11 +3,6 @@ logolabopp
 
 Le logo du laboratoire de mathématiques Paul Painlevé de l'université Lille 1
 
-logolabopp
-==========
-
-Le logo du laboratoire de mathématiques Paul Painlevé de l'université Lille 1
-
 
 LaTeX
 -----
