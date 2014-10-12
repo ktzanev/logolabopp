@@ -10,9 +10,9 @@
     <link href="favicon.ico" type="image/x-icon" rel="icon" />
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 
-    <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 
-    <script data-require="angular.js@1.2.25" data-semver="1.2.25" src="https://code.angularjs.org/1.2.25/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
   </head>
 
   <body ng-app>
@@ -90,10 +90,10 @@
           </li>
           <li>
             <p>
-              Lettre type</strong> du labo : le résultat en <a href="latex/exemple_lettre.pdf">PDF</a> et sa source en <a href="latex/exemple_lettre.tex">LaTeX</a>.</li>
+              Lettre type du labo : le résultat en <a href="latex/exemple_lettre.pdf">PDF</a> et sa source en <a href="latex/exemple_lettre.tex">LaTeX</a>.</li>
             </p>
             <div class="alert alert-warning" role="alert">
-              Si vous avez des problèmes avec la compilation de TiKz, il existe une version symplifiée du style <a href="latex/laboppnotikz.sty">laboppnotikz.sty</a>. Pour pouvoir l'utiliser vous avez besoin de deux images en pdf <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>. Pour l'utilisation de ce style vous pouvez consulter le modèle <a href="latex/exemple_lettre_notikz.tex">exemple_lettre_notikz.tex</a>, ainsi que le résultat de la compilation avec pdflatex <a href="latex/exemple_lettre_notikz.pdf">exemple_lettre_notikz.pdf</a>.
+              Si vous avez des problèmes avec la compilation de TiKz, il existe une version simplifiée du style <a href="latex/laboppnotikz.sty">laboppnotikz.sty</a>. Pour pouvoir l'utiliser vous avez besoin de deux images en pdf <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>. Pour l'utilisation de ce style vous pouvez consulter le modèle <a href="latex/exemple_lettre_notikz.tex">exemple_lettre_notikz.tex</a>, ainsi que le résultat de la compilation avec pdflatex <a href="latex/exemple_lettre_notikz.pdf">exemple_lettre_notikz.pdf</a>.
             </div>
         </ul>
       </p>
@@ -109,13 +109,12 @@
       <h2 id="autres">Autres</h2>
       Dans cette section vous pouvez trouver d'autres fichiers utiles.
       <ul>
-        <li><strong>Logo CNRS</strong> (petit en gris) : <span class="files">l'original en <a href="autres/logocnrs_petit.tikz">TikZ</a>, et les bitmaps en <a href="autres/CNRS_INSMI_gray_370_x_200.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/CNRS_INSMI_gray_370_x_200.png">PNG&nbsp;(avec transparence)</a>.</span></li>
-        <li><strong>Logo de l'Université</strong> (petit en gris) : <span class="files">l'original en <a href="autres/logoustl_patit.tikz">TikZ</a>, et les bitmaps en <a href="autres/USTL_gray_570_x_200.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/USTL_gray_570_x_20.png">PNG&nbsp;(avec transparence)</a>.</span></li>
-        <li>Icone <strong>téléphone</strong> :<span class="files">l'original en <a href="autres/phone.tikz">TikZ</a>, et les bitmaps en <a href="autres/phone.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/phone.png">PNG&nbsp;(avec transparence)</a>.</span></li>
-        <li>Icone <strong>fax</strong> : <span class="files">l'original en <a href="autres/fax.tikz">TikZ</a>, et les bitmaps en <a href="autres/fax.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/fax.png">PNG&nbsp;(avec transparence)</a>.</span></li>
-        <li>Icone <strong>monde</strong> : <span class="files">l'original en <a href="autres/world.tikz">TikZ</a>, et les bitmaps en <a href="autres/world.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/world.png">PNG&nbsp;(avec transparence)</a>.</span></li>
-        <li>Icone du <strong>favori labo</strong> : <span class="files"><a href="favicon.ico">favicon.ico</a> (pour mettre à la racine du site web ou à utiliser dans une page avec &lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;icon&quot; /&gt;)</span></li>
-        <li>Toutes <strong>les resources</strong> (y compris cette page) : <span class="files"><a href="logopp.zip">logopp.zip</a></span></li>
+        <li><strong>Logo CNRS</strong> (petit en gris) : l'original en <a href="autres/logocnrs_petit.tikz">TikZ</a>, et les bitmaps en <a href="autres/CNRS_INSMI_gray_370_x_200.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/CNRS_INSMI_gray_370_x_200.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li><strong>Logo de l'Université</strong> (petit en gris) : l'original en <a href="autres/logoustl_patit.tikz">TikZ</a>, et les bitmaps en <a href="autres/USTL_gray_570_x_200.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/USTL_gray_570_x_20.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li>Icône <strong>téléphone</strong> :l'original en <a href="autres/phone.tikz">TikZ</a>, et les bitmaps en <a href="autres/phone.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/phone.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li>Icône <strong>fax</strong> : l'original en <a href="autres/fax.tikz">TikZ</a>, et les bitmaps en <a href="autres/fax.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/fax.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li>Icône <strong>monde</strong> : l'original en <a href="autres/world.tikz">TikZ</a>, et les bitmaps en <a href="autres/world.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/world.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li>Icône du <strong>favori labo</strong> : <a href="favicon.ico">favicon.ico</a> (pour mettre à la racine du site web ou à utiliser dans une page avec &lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;icon&quot; /&gt;)</li>
       </ul>
       <div class="alert alert-warning" role="alert">
       La police utiliser dans le logo est <a href="http://en.wikipedia.org/wiki/Baskerville">Baskerville (Old Face)</a>.
