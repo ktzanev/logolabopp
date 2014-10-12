@@ -1,0 +1,84 @@
+\ProvidesPackage{laboppnotikz}
+\RequirePackage{textpos}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+%
+%
+%   file : laboppnotikz.sty
+%   author : Kroum Tzanev
+%   versoin : 0.1
+%   date : December 12, 2013
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% You have to use :
+%   \usepackage[absolute]{textpos}
+%   \usepackage{graphicx}
+%
+% and you need the files :
+%   logonompp.pdf
+%   labofooter.pdf
+%
+% to put the header and/or the footer on every page use:
+%   \usepackage{everypage}
+%  and then for example :
+%   \AddEverypageHook{\laboheader}
+%
+
+% ------------------- univ-lille1 colors ------------------------
+\definecolor{bleuclaireuniv}{rgb}{0,0.663,0.878}
+\definecolor{bleufonceuniv}{rgb}{0.086,0.467,0.721}
+\definecolor{noiruniv}{rgb}{0.102,0.090,0.090}
+\definecolor{grisuniv}{rgb}{0.486,0.509,0.509}
+
+\definecolor{vertinsmi}{rgb}{0.33,0.49,0.24}
+\definecolor{vertfonce}{rgb}{0.105,0.349,0.188} % rgb(27,89,48)
+\definecolor{vertclaire}{rgb}{0.25,0.839,0.447} % rgb(64,214,114)
+
+\def\laboheader{
+\begin{textblock*}{210mm}(5mm,10mm)
+  \includegraphics{logonompp.pdf}
+\end{textblock*}
+}
+
+\def\textheader#1{
+\begin{textblock*}{210mm}(29mm,29mm)
+\noindent\textcolor{gray}{\textsf{#1}}
+\end{textblock*}
+}
+
+
+%====================== the footer ======================
+\def\labofooter{
+\begin{textblock*}{210mm}(14mm,277mm)
+  \includegraphics{labofooter.pdf}
+\end{textblock*}
+}
+
+%====================== destinataire ======================
+\newlength{\destlen}
+\setlength{\destlen}{7cm}
+\newenvironment{destinataire}{
+\vspace{1cm}
+\hfill
+\begin{minipage}{\destlen}
+}{
+\end{minipage}
+\vspace{1cm}
+}
+
+%====================== objet ======================
+\def\objet#1{\textbf{Objet : }\textit{#1}\vspace{1cm}}
+
+%====================== expediteur ======================
+\newlength{\explen}
+\setlength{\explen}{7cm}
+\newenvironment{expediteur}{
+\vspace{1cm}
+\hfill
+\begin{minipage}{\explen}
+}{
+\end{minipage}
+\vspace{2cm}
+}

@@ -1,0 +1,102 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[top=21mm,bottom=28mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
+\usepackage{tikz}
+\usepackage{labopp}
+\usepackage{fancyvrb}
+\pagestyle{empty}
+\begin{document}
+
+% ------------------- l'en-t\^ete ------------------------
+\laboheader
+
+\def\CommentChar{\char37}
+\catcode`!=\active
+\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
+\documentclass[a4paper,11pt]{article}
+\usepackage[top=21mm,bottom=28mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
+\usepackage{tikz}
+\usepackage{labopp} ! <----------- le package avec les commandes du labo
+\begin{document}
+\laboheader ! <----------- l'en-tete en haut a gauche
+\end{Verbatim}
+
+% ------------------- test ------------------------
+
+\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
+! ---------------------------------- exemple 1 (valeurs par defaut)
+\logonompp{2}
+\end{Verbatim}
+\logonompp{2}
+
+\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
+! ---------------------------------- exemple 2 (logo seul + choix des tailles)
+\logopp{1}\logopp{2}\logopp{4}
+\end{Verbatim}
+\logopp{1}\logopp{2}\logopp{4}
+
+
+\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
+! ---------------------------------- exemple 3 (la totale)
+\def\setup{[fill=black]}
+\def\setdown{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
+\def\setborder{[draw=black]}
+\def\setcircles{[draw=gray, thin]}
+\def\settextlabo{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
+\logonompp{2}
+\end{Verbatim}
+\def\setup{[fill=black]}
+\def\setdown{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
+\def\setborder{[draw=black]}
+\def\setcircles{[draw=gray, thin]}
+\def\settextlabo{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
+\logonompp{2}
+
+
+
+\vfill
+
+\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
+! ---------------------------------- exemple 4 (le bas de page)
+\labofooter
+\end{Verbatim}
+\labofooter
+
+\pagebreak
+
+% ----------------- en-t\^ete avec le coordonn\'ees du labo ----------------
+\setdefaultspp
+\labotextheader
+\vspace{4cm}
+
+\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
+! ----------------- (l'en-tete avec les coordonnees du labo)
+\labotextheader
+
+! ----------------- Les couleurs d\'efinies dans la package :
+\end{Verbatim}
+
+% ----------------- les couleurs ----------------
+\def\drawcolor#1{
+\tikz{\path[fill=#1] (0,0) node[above, rectangle,minimum width=3cm,rounded corners=1mm, draw=#1]{#1} (-1.5,-1) rectangle (1.5,0);}}
+
+
+
+\drawcolor{bleuclaireuniv}
+\drawcolor{bleufonceuniv}
+\drawcolor{noiruniv}
+\drawcolor{grisuniv}
+\vspace{4mm}
+
+\drawcolor{vertinsmi}
+\drawcolor{vertfonce}
+\drawcolor{vertclaire}
+
+\vfill
+\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
+! ----------------- (le bas de page dans le syle de l'universite)
+\labounivfooter
+\end{Verbatim}
+\labounivfooter
+
+
+\end{document}
