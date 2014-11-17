@@ -41,4 +41,4 @@ Dans cette section vous pouvez trouver d'autres fichiers utiles.
 * Icône *monde* : l'original en [TikZ](http://ktzanev.github.io/logolabopp/autres/world.tikz), et les bitmaps en [GIF&nbsp;(sur fond blanc)](http://ktzanev.github.io/logolabopp/autres/world.gif) et [PNG&nbsp;(avec transparence)](http://ktzanev.github.io/logolabopp/autres/world.png).
 * Icône du *favori labo* : [favicon.ico](http://ktzanev.github.io/logolabopp/favicon.ico) (pour mettre à la racine du site web ou à utiliser dans une page avec &lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;icon&quot; /&gt;)
 
-> La police utiliser dans le logo est [Baskerville (Old Face)](http://en.wikipedia.org/wiki/Baskerville).
+> La police utilisée dans le logo est [Baskerville (Old Face)](http://en.wikipedia.org/wiki/Baskerville).
