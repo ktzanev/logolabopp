@@ -13,23 +13,90 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script>
+      function DownloadCtrl($scope){
+        $scope.logos = [
+          {
+            name : "Logo Paul Painlevé",
+            folder : "logopp",
+            base : "logopp",
+            resolutions : [
+              {x:40, y:50},
+              {x:80, y:100},
+              {x:240, y:300},
+              {x:560, y:700}
+            ]
+          },
+          {
+            name : "Logo et nom Paul Painlevé",
+            folder : "logonompp",
+            base : "logonompp",
+            resolutions : [
+              {x:125, y:50},
+              {x:250, y:100},
+              {x:750, y:300},
+              {x:1725, y:700}
+            ]
+          },
+          {
+            name : "Logo Université (de) Lille 1",
+            folder : "ul1",
+            base : "ul1",
+            resolutions : [
+              {x:46, y:50},
+              {x:92, y:100},
+              {x:276, y:300},
+              {x:644, y:700}
+            ]
+          },
+          {
+            name : "Logo et nom Université (de) Lille 1",
+            folder : "ul1nom",
+            base : "ul1nom",
+            resolutions : [
+              {x:94, y:50},
+              {x:188, y:100},
+              {x:565, y:300},
+              {x:1319, y:700}
+            ]
+          },
+          {
+            name : "Logo UFR de Mathématiques",
+            folder : "ul1ufr",
+            base : "ul1ufr",
+            resolutions : [
+              {x:140, y:50},
+              {x:281, y:100},
+              {x:843, y:300},
+              {x:1966, y:700}
+            ]
+          }
+        ];
+        $scope.logo = $scope.logos[1]; // au départ on met "Logo et nom PP"
+        $scope.resolution = $scope.logo.resolutions[1]; // au départ on met "Logo et nom PP"
+        $scope.pixels = function(r) {
+          return ""+r.x+" x "+r.y+" pixels";
+        };
+        $scope.forfile = function(r) {
+          return "_"+r.x+"_"+r.y;
+        }
+      }
+    </script>
   </head>
 
   <body ng-app>
 
     <!-- Le formulaire -->
     <div class="jumbotron container-fluid">
-      <div class="row">
+      <div class="row" ng-controller="DownloadCtrl">
 
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 text-center">
-          <img class="img-thumbnail" ng-src="{{avecnomoupas && ('logonompp/logonompp_750_300.png') || ('logopp/logopp_240_300.png')}}" alt="Logo Paul Painlevé" /><p></p>
+          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.png" alt="Logo Paul Painlevé" /><p></p>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4 text-center">
 
-        <!-- Avec ou sans nom ? -->
-        <select class="form-control" ng-model="avecnomoupas" ng-init="avecnomoupas='nom'; resolution = '125_50'" ng-change="resolution = avecnomoupas && ('125_50') || ('40_50') ">
-          <option value="nom" selected="selected">logo et nom</option>
-          <option value="">logo seul</option>
+        <!-- Quel logo ? -->
+        <select class="form-control" ng-model="logo" ng-options="l.name for l in logos" ng-change="resolution=logo.resolutions[1]">
         </select>
         <br />
 
@@ -38,6 +105,7 @@
           <option value="svg">SVG (vectoriel)</option>
           <option value="eps">EPS (vectoriel)</option>
           <option value="pdf">PDF (vectoriel)</option>
+          <option value="tikz">TikZ (vectoriel)</option>
           <option value="png">PNG 24bits (bitmap avec transparence)</option>
           <option value="gif" selected="selected">GIF 256 couleurs (bitmap sur fond blanc)</option>
           <option value="jpg">JPG (bitmap sur fond blanc)</option>
@@ -45,21 +113,12 @@
         <br />
 
         <!-- Résolution ? -->
-        <select class="form-control" ng-model="resolution" ng-show="bitmap">
-          <option ng-show="avecnomoupas" value="125_50">125 x 50 pixels</option>
-          <option ng-show="avecnomoupas" value="250_100" selected="selected">250 x 100 pixels</option>
-          <option ng-show="avecnomoupas" value="750_300">750 x 300 pixels</option>
-          <option ng-show="avecnomoupas" value="1725_700">1725 x 700 pixels</option>
-
-          <option ng-hide="avecnomoupas" value="40_50">40 x 50 pixels</option>
-          <option ng-hide="avecnomoupas" value="80_100">80 x 100 pixels</option>
-          <option ng-hide="avecnomoupas" value="240_300">240 x 300 pixels</option>
-          <option ng-hide="avecnomoupas" value="560_700">560 x 700 pixels</option>
+        <select class="form-control" ng-model="resolution" ng-options="pixels(r) for r in logo.resolutions" ng-show="bitmap">
         </select>
         <br />
 
         <!-- C'est parti ! -->
-        <a class="btn btn-primary btn-lg" role="button" ng-href="logo{{avecnomoupas}}pp/logo{{avecnomoupas}}pp{{bitmap && ('_'+resolution) || ('')}}.{{typedefichier}}">Télécharger</a>
+        <a class="btn btn-primary btn-lg" role="button" ng-href="{{logo.folder}}/{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}">Télécharger</a>
         </div>
       </div>
     </div>
