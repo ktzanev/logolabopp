@@ -37,20 +37,25 @@
 
 \begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
 ! ---------------------------------- exemple 3 (la totale)
-\def\setup{[fill=black]}
-\def\setdown{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
-\def\setborder{[draw=black]}
-\def\setcircles{[draw=gray, thin]}
-\def\settextlabo{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
+\tikzset{
+  up/.style={fill=black},
+  down/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv},
+  border/.style={draw=black},
+  circles/.style={draw=gray},
+  textlabo/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv}
+}
 \logonompp{2}
 \end{Verbatim}
-\def\setup{[fill=black]}
-\def\setdown{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
-\def\setborder{[draw=black]}
-\def\setcircles{[draw=gray, thin]}
-\def\settextlabo{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
-\logonompp{2}
-
+{ % dans un groupe les changement de style sont locaux
+  \tikzset{
+    up/.style={fill=black},
+    down/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv},
+    border/.style={draw=black},
+    circles/.style={draw=gray},
+    textlabo/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv}
+  }
+  \logonompp{2}
+}
 
 
 \vfill
@@ -64,7 +69,6 @@
 \pagebreak
 
 % ----------------- en-t\^ete avec le coordonn\'ees du labo ----------------
-\setdefaultspp
 \labotextheader
 \vspace{4cm}
 

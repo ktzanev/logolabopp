@@ -40,19 +40,25 @@
 
 \begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
 ! ---------------------------------- exemple 3 (la totale)
-\def\setup{[fill=black]}
-\def\setdown{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
-\def\setborder{[draw=black]}
-\def\setcircles{[draw=gray, thin]}
-\def\settextlabo{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
+\tikzset{
+  up/.style={fill=black},
+  down/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv},
+  border/.style={draw=black},
+  circles/.style={draw=gray},
+  textlabo/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv}
+}
 \logonompp{2}
 \end{Verbatim}
-\def\setup{[fill=black]}
-\def\setdown{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
-\def\setborder{[draw=black]}
-\def\setcircles{[draw=gray, thin]}
-\def\settextlabo{[shade, top color=bleuclaireuniv, bottom color=bleufonceuniv]}
-\logonompp{2}
+{ % dans un groupe les changement de style sont locaux
+  \tikzset{
+    up/.style={fill=black},
+    down/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv},
+    border/.style={draw=black},
+    circles/.style={draw=gray},
+    textlabo/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv}
+  }
+  \logonompp{2}
+}
 
 
 
@@ -67,7 +73,6 @@
 \pagebreak
 
 % ----------------- en tête avec le coordonnées du labo ----------------
-\setdefaultspp
 \labotextheader
 \vspace{4cm}
 
@@ -82,22 +87,21 @@
 \def\drawcolor#1{
 \tikz{\path[fill=#1] (0,0) node[above, rectangle,minimum width=3cm,rounded corners=1mm, draw=#1]{#1} (-1.5,-1) rectangle (1.5,0);}}
 
-
+\drawcolor{vertfonce}
+\drawcolor{vertclaire}
+\drawcolor{vertinsmi}
+\drawcolor{hibiscusuniv}
+\vspace{4mm}
 
 \drawcolor{bleuclaireuniv}
 \drawcolor{bleufonceuniv}
 \drawcolor{noiruniv}
 \drawcolor{grisuniv}
-\vspace{4mm}
-
-\drawcolor{vertinsmi}
-\drawcolor{vertfonce}
-\drawcolor{vertclaire}
 
 \vfill
 \begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
 ! ----------------- (le bas de page dans le syle de l'Université)
-\labounivfooter
+\labounivfooter ! on peut aussi l'avoir en noir et blanc : \labounivfootermono
 \end{Verbatim}
 \labounivfooter
 

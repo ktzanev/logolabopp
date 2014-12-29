@@ -17,17 +17,12 @@
     foreach \y in {-2,-1.5,1.5,2}{(-2,\y) -- (2,\y)}}},
   border path/.style={insert path={(-1.5,-2) rectangle (1.5,2)}},
   up/.style = {shade, top color=vertclaire, bottom color=vertfonce},
-  circles/.style = {draw=gray!70!vertclaire, thin, opacity=0.3},
+  circles/.style = {draw=gray!70!vertclaire, opacity=0.3},
   textlabo/.style = {fill=black},
+  logo scale/.style={line width={#1*.4}, scale={#1*.25}}
 }
 
-\newcommand{\setdown}[1]{\tikzstyle{down}=#1}
-\newcommand{\setcircles}[1]{\tikzstyle{circles}=#1}
-\newcommand{\setup}[1]{\tikzstyle{up}=#1}
-\newcommand{\setborder}[1]{\tikzstyle{border}=#1}
-\newcommand{\settextlabo}[1]{\tikzstyle{textlabo}=#1}
-
-\begin{tikzpicture}[scale=.25]
+\begin{tikzpicture}[logo scale=1]
   \path[down path, down/.try];
   \path[circles path, circles/.try];
   \path[up path, up/.try];
