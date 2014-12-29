@@ -1,10 +1,14 @@
-\def\faxb{[draw=white,fill=white,line join=round,even odd rule,line width=0.01]}
-\def\faxa{[draw=gray,fill=gray,line join=round,even odd rule,line width=1]}
-\def\faxc{[draw=gray,fill=white,line join=round,even odd rule,line width=0.5]}
-\begin{tikzpicture}[y=1pt, x=1pt,yscale=-1, scale=0.21]
-  \path\faxa (139.5241,112.5732) .. controls (140.1893,109.3342) and (147.7273,108.7943) .. (148.5033,112.6632) .. controls (147.6165,122.5602) and (147.5056,125.1694) .. (147.7273,135.5163) .. controls (147.7273,138.5754) and (139.8567,139.4751) .. (139.3024,135.4263) .. controls (138.3047,130.8377) and (138.3047,120.0410) .. (139.5241,112.5732) -- cycle;
-  \path\faxc (151.7890,93.7237) -- (157.2781,108.2682) .. controls (157.4796,108.8032) and (158.1020,109.2606) .. (158.6736,109.2606) -- (181.0331,109.2606) .. controls (181.6047,109.2606) and (181.8858,108.8032) .. (181.6843,108.2682) -- (176.1953,93.7237) -- (151.7890,93.7237) -- cycle;
-  \path\faxa (144.0311,116.6253) rectangle (154.0193,131.9775);
-  \path\faxa (153.2795,108.3018) rectangle (190.4578,136.9716);
-  \path\faxb (157.6805,112.0524) rectangle (186.0026,116.4345);
+\tikzset{
+  fax/.style = {line join=round,even odd rule,x=.21pt,y=-.21pt},
+  faxa/.style = {draw=gray,fill=gray,line width=.7},
+  faxb/.style = {draw=white,fill=white,line width=0.01},
+  faxc/.style = {draw=gray,fill=white,line width=0.5},
+}
+
+\begin{tikzpicture}[fax]
+  \path[faxa] (139,112) .. controls (140,109) and (147,108) .. (148,112) .. controls (147,122) and (147,125) .. (147,135) .. controls (147,138) and (139,139) .. (139,135) .. controls (138,130) and (138,120) .. (139,112) -- cycle;
+  \path[faxc] (151,93) -- (157,108) .. controls (157,108) and (158,109) .. (158,109) -- (181,109) .. controls (181,109) and (181,108) .. (181,108) -- (176,93) -- (151,93) -- cycle;
+  \path[faxa] (144,116) rectangle (154,131);
+  \path[faxa] (153,108) rectangle (190,136);
+  \path[faxb] (157,112) rectangle (186,116);
 \end{tikzpicture}
