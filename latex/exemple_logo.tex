@@ -14,7 +14,7 @@
 \begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
 \documentclass[a4paper,11pt]{article}
 \usepackage[top=21mm,bottom=28mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
-\usepackage{tikz}
+\usepackage{tikz} ! <----------- pas obligatoire car labopp le charge si necessaire
 \usepackage{labopp} ! <----------- le package avec les commandes du labo
 \begin{document}
 \laboheader ! <----------- l'en-tete en haut a gauche
@@ -83,17 +83,16 @@
 \def\drawcolor#1{
 \tikz{\path[fill=#1] (0,0) node[above, rectangle,minimum width=3cm,rounded corners=1mm, draw=#1]{#1} (-1.5,-1) rectangle (1.5,0);}}
 
-
+\drawcolor{vertfonce}
+\drawcolor{vertclaire}
+\drawcolor{vertinsmi}
+\drawcolor{hibiscusuniv}
+\vspace{4mm}
 
 \drawcolor{bleuclaireuniv}
 \drawcolor{bleufonceuniv}
 \drawcolor{noiruniv}
 \drawcolor{grisuniv}
-\vspace{4mm}
-
-\drawcolor{vertinsmi}
-\drawcolor{vertfonce}
-\drawcolor{vertclaire}
 
 \vfill
 \begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]

@@ -6,7 +6,7 @@
 %   file : labopp.sty
 %   author : Kroum Tzanev
 %   versoin : 2.0
-%   date : April 1, 2011
+%   date : December 29, 2014
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,7 +74,7 @@
   textlabo/.style = {fill=black},
   logo scale/.style={line width={#1*.4}, scale={#1*.25}}
 }
-% for compatibility with version 1
+% for "almost" compatibility with version 1
 \newcommand{\setdown}[1]{\tikzstyle{down}=#1}
 \newcommand{\setcircles}[1]{\tikzstyle{circles}=#1}
 \newcommand{\setup}[1]{\tikzstyle{up}=#1}
@@ -135,7 +135,6 @@
   faxb/.style = {draw=white,fill=white,line width=0.01},
   faxc/.style = {draw=gray,fill=white,line width=0.5},
 }
-
 \newcommand{\faxpic}{
 \begin{tikzpicture}[fax]
   \path[faxa] (139,112) .. controls (140,109) and (147,108) .. (148,112) .. controls (147,122) and (147,125) .. (147,135) .. controls (147,138) and (139,139) .. (139,135) .. controls (138,130) and (138,120) .. (139,112) -- cycle;
@@ -240,24 +239,6 @@
 }
 
 %====================== the header ======================
-\newcommand{\labotextheader}{
-\begin{tikzpicture}[remember picture,overlay, shift=(current page.north west)]
-  \node at (3.5,-2) {\logonompp{1.4}};
-  \node[text width=7cm, below right, gray, scale=1] at (2.7  ,-2.7)
-      {\textsf{UMR 8524}\newline
-       \textsf{Villeneuve d'Ascq 59655 C\'edex}
-      };
-  \node[text width=7cm, below right, gray, scale=1] at (2.5  ,-3.7)
-      {
-       \begin{tabular}{cl}
-         \phonepic & \textsf{+33(0)3 20 43 48 50}\\
-         \faxpic   & \textsf{+33(0)3 20 43 43 02}\\
-         \webpic   & \textsf{labomath.univ-lille1.fr}
-       \end{tabular}
-      };
-\end{tikzpicture}
-}
-
 \newcommand{\laboheader}{
 \begin{tikzpicture}[remember picture,overlay]
   \begin{scope}[shift=(current page.north west)]
@@ -271,7 +252,16 @@
     \node[textheader,below right] at (-.77,.3) {\textsf{#1}};
 \end{tikzpicture}
 }
-
+\newcommand{\labotextheader}{\laboheader\textheader{%
+\textbf{UMR 8524}\\
+Villeneuve d'Ascq 59655 C\'edex\\[.4em]
+\hspace*{-3mm}
+\begin{tabular}{cl}
+  \phonepic & \textsf{+33(0)3 20 43 48 50}\\
+  \faxpic   & \textsf{+33(0)3 20 43 43 02}\\
+  \webpic   & \textsf{labomath.univ-lille1.fr}
+\end{tabular}
+}}
 
 %====================== the footer ======================
 \tikzset{labofooter/.style={remember picture,overlay,shift=(current page.south)}}
