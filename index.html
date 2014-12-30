@@ -102,9 +102,10 @@
 
         <!-- Type de fichier ? -->
         <select class="form-control" ng-model="typedefichier" ng-init="typedefichier='png';bitmap =true" ng-change="bitmap = typedefichier == 'png' || typedefichier == 'gif' || typedefichier == 'jpg'">
+          <option value="pdf">PDF (vectoriel)</option>
           <option value="svg">SVG (vectoriel)</option>
           <option value="eps">EPS (vectoriel)</option>
-          <option value="pdf">PDF (vectoriel)</option>
+          <option value="ps"> PS (vectoriel)</option>
           <option value="tikz">TikZ (vectoriel)</option>
           <option value="png">PNG 24bits (bitmap avec transparence)</option>
           <option value="gif" selected="selected">GIF 256 couleurs (bitmap sur fond blanc)</option>
