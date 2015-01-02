@@ -8,7 +8,7 @@ Pour télécharger le logo vous pouvez vous rendre sur [la page web du projet](h
 LaTeX
 -----
 
-Pour utiliser les macros LaTex il faut inclure la librairie logopp&nbsp;(<code>\usepackage{labopp}</code>) ainsi que [TiKz](http://fr.wikipedia.org/wiki/PGF/TikZ) (<code>\usepackage{tikz}</code>).
+Pour utiliser les macros LaTex il faut inclure la librairie labopp&nbsp;(<code>\usepackage{labopp}</code>) ainsi que [TiKz](http://fr.wikipedia.org/wiki/PGF/TikZ) (<code>\usepackage{tikz}</code>).
 
 Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez [le télécharger ici](http://ktzanev.github.io/logolabopp/latex/labopp.sty). Vous pouvez le mettre soit avec les autres bibliothèques LaTeX, soit dans le même répertoire que le fichier latex.
 
@@ -16,7 +16,7 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
 
 **Exemples :**
 
-* Utilisation de la bibliothèque <code>logopp</code> : le résultat en [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_logo.pdf) et sa [source en LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_logo.tex).
+* Utilisation de la bibliothèque <code>labopp</code> : le résultat en [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_logo.pdf) et sa [source en LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_logo.tex).
   > Comme *fancyvrb* a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.pdf) et [la source LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.tex).
 
 * Lettre type du labo : le résultat en [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_lettre.pdf) et [sa source en LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_lettre.tex).
