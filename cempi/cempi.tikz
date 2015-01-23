@@ -1,0 +1,14 @@
+% auteur du logo : ??
+% version tikz : Kroum Tzanev
+% date : 23 janvier 2015
+\usetikzlibrary{svg.path}
+
+\definecolor{cempiorange}{rgb}{.94024,.33329,.10203} % #F0551A = (240,85,26)
+\definecolor{cempiorangebis}{rgb}{0.851,0.369,0} % #D95E00 = (217,94,0)
+
+\begin{tikzpicture}
+  % =========== LOGO ===========
+  \begin{scope}[scale=.935,rotate=-95,line width=.7pt,cempiorange]
+    \draw (0:1) foreach \i in {1,...,35} {--(\i*131.45:1)};
+  \end{scope}
+\end{tikzpicture}

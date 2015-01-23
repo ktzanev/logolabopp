@@ -70,6 +70,28 @@
               {x:843, y:300},
               {x:1966, y:700}
             ]
+          },
+          {
+            name : "Logo CEMPI",
+            folder : "cempi",
+            base : "cempi",
+            resolutions : [
+              {x:50, y:50},
+              {x:100, y:100},
+              {x:300, y:300},
+              {x:700, y:700}
+            ]
+          },
+          {
+            name : "Logo et nom CEMPI",
+            folder : "cempinom",
+            base : "cempinom",
+            resolutions : [
+              {x:179, y:50},
+              {x:357, y:100},
+              {x:1071, y:300},
+              {x:2499, y:700}
+            ]
           }
         ];
         $scope.logo = $scope.logos[1]; // au départ on met "Logo et nom PP"
@@ -91,7 +113,7 @@
       <div class="row" ng-controller="DownloadCtrl">
 
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 text-center">
-          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.png" alt="Logo Paul Painlevé" /><p></p>
+          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.gif" alt="Logo Paul Painlevé" /><p></p>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4 text-center">
 
