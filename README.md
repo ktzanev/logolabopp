@@ -22,6 +22,8 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
 * Lettre type du labo : le résultat en [PDF](http://ktzanev.github.io/logolabopp/latex/exemple_lettre.pdf) et [sa source en LaTeX](http://ktzanev.github.io/logolabopp/latex/exemple_lettre.tex).
   > Si vous avez des problèmes avec la compilation de TiKz, il existe une version simplifiée du style [laboppnotikz.sty](http://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty). Pour pouvoir l'utiliser vous avez besoin de deux images en pdf [logonompp.pdf](http://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](http://ktzanev.github.io/logolabopp/latex/labofooter.pdf). Pour l'utilisation de ce style vous pouvez consulter le modèle [exemple_lettre_notikz.tex](http://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex), ainsi que le résultat de la compilation avec pdflatex [exemple_lettre_notikz.pdf](http://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf).
 
+  > Il existe également une version de [labopp.sty](http://ktzanev.github.io/logolabopp/latex/tikz_v2.1/labopp.sty) compatible avec l'ancienne version 2.1 de TikZ.
+
 Word
 ----
 
