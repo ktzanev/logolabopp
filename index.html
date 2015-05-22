@@ -152,14 +152,29 @@
       <!-- LaTeX -->
       <h2 id="latex" >LaTeX</h2>
       <p>
-        Pour utiliser les macros LaTex il faut inclure la librairie labopp&nbsp;(<code>\usepackage{labopp}</code>) ainsi que <a href="http://fr.wikipedia.org/wiki/PGF/TikZ">TiKz</a>&nbsp;(<code>\usepackage{tikz}</code>).
+        Pour utiliser les macros LaTex il faut inclure la librairie labopp&nbsp;(<code>\usepackage{labopp}</code>), qui est basée sur <a href="http://fr.wikipedia.org/wiki/PGF/TikZ">Ti<i>k</i>Z 3.x</a>&nbsp;.
       </p>
       <p>
         Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez <a href="latex/labopp.sty">le télécharger ici</a>.
         Vous pouvez le mettre soit avec les autres bibliothèques LaTeX, soit dans le même répertoire que le fichier latex.
       </p>
       <p>
-        <strong>Attention :</strong> Pour que l'en-tête et le pied de page se mettent en place, il faut compiler deux fois.
+        <div class="alert alert-warning" role="alert">
+          <strong>Attention :</strong>
+          <ul>
+            <li>Pour que l'en-tête et le pied de page se mettent en place, il faut compiler deux fois.</li>
+            <li>Si vous avez des problèmes avec la compilation (probablement dû à votre version de de Ti<i>k</i>Z) :
+              <ul>
+                <li>
+                  Il existe une version de <a href="latex/tikz_v2.1/labopp.sty">labopp.sty</a> compatible avec l'ancienne version 2.1 de Ti<i>k</i>Z.
+                </li>
+                <li>
+                  Il existe également une version simplifiée de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, qui n'utilise pas Ti<i>k</i>Z. Pour pouvoir l'utiliser, en plus de la bibliothèque elle même, vous avez besoin de deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>. Pour l'utilisation de ce style vous pouvez consulter le modèle <a href="latex/exemple_lettre_notikz.tex">exemple_lettre_notikz.tex</a>, ainsi que le résultat de la compilation avec pdflatex <a href="latex/exemple_lettre_notikz.pdf">exemple_lettre_notikz.pdf</a>.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </p>
       <p>
         <strong>Exemples :</strong>
@@ -176,10 +191,6 @@
             <p>
               Lettre type du labo : le résultat en <a href="latex/exemple_lettre.pdf">PDF</a> et sa source en <a href="latex/exemple_lettre.tex">LaTeX</a>.</li>
             </p>
-            <div class="alert alert-warning" role="alert">
-              <p>Si vous avez des problèmes avec la compilation de TiKz, il existe une version simplifiée du style <a href="latex/laboppnotikz.sty">laboppnotikz.sty</a>. Pour pouvoir l'utiliser vous avez besoin de deux images en pdf <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>. Pour l'utilisation de ce style vous pouvez consulter le modèle <a href="latex/exemple_lettre_notikz.tex">exemple_lettre_notikz.tex</a>, ainsi que le résultat de la compilation avec pdflatex <a href="latex/exemple_lettre_notikz.pdf">exemple_lettre_notikz.pdf</a>.</p>
-              <p>Il existe également une version de <a href="latex/tikz_v2.1/labopp.sty">labopp.sty</a> compatible avec l'ancienne version 2.1 de TikZ.</p>
-            </div>
         </ul>
       </p>
 
@@ -187,7 +198,7 @@
       <p>
         Voici un fichier de lettre type du labo : le résultat en <a href="doc/exemple_lettre_doc.pdf">PDF</a> et sa source en <a href="doc/exemple_lettre.docx">DOCX</a>, en <a href="doc/exemple_lettre.doc">DOC</a> et en <a href="doc/exemple_lettre.odt">ODT</a>.
         <div class="alert alert-warning" role="alert">
-          <em>Remarque :</em> Les images dans le fichier sont en GIF.
+          <em>Remarque :</em> Les images dans le fichier sont pixelisées (GIF/PNG).
         </div>
       </p>
 
