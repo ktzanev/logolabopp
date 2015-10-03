@@ -15,11 +15,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script>
       function DownloadCtrl($scope){
+        // logos
         $scope.logos = [
           {
             name : "Logo Paul Painlevé",
             folder : "logopp",
             base : "logopp",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:40, y:50},
               {x:80, y:100},
@@ -31,6 +33,7 @@
             name : "Logo et nom Paul Painlevé",
             folder : "logonompp",
             base : "logonompp",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:125, y:50},
               {x:250, y:100},
@@ -42,6 +45,7 @@
             name : "Logo Université (de) Lille 1",
             folder : "ul1",
             base : "ul1",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:46, y:50},
               {x:92, y:100},
@@ -53,6 +57,7 @@
             name : "Logo et nom Université (de) Lille 1",
             folder : "ul1nom",
             base : "ul1nom",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:94, y:50},
               {x:188, y:100},
@@ -61,9 +66,10 @@
             ]
           },
           {
-            name : "Logo UFR de Mathématiques",
+            name : "Logo et nom UFR",
             folder : "ul1ufr",
             base : "ul1ufr",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:140, y:50},
               {x:281, y:100},
@@ -72,9 +78,34 @@
             ]
           },
           {
+            name : "Logo Fédération",
+            folder : "frm",
+            base : "frm",
+            types : ["png", "gif", "jpg", "pdf", "eps", "ps"],
+            resolutions : [
+              {x:70, y:50},
+              {x:140, y:100},
+              {x:419, y:300},
+              {x:977, y:700}
+            ]
+          },
+          {
+            name : "Logo et nom Fédération",
+            folder : "frmnom",
+            base : "frmnom",
+            types : ["png", "gif", "jpg", "pdf", "eps", "ps"],
+            resolutions : [
+              {x:198, y:50},
+              {x:395, y:100},
+              {x:1186, y:300},
+              {x:2767, y:700}
+            ]
+          },
+          {
             name : "Logo CEMPI",
             folder : "cempi",
             base : "cempi",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:50, y:50},
               {x:100, y:100},
@@ -86,6 +117,7 @@
             name : "Logo et nom CEMPI",
             folder : "cempinom",
             base : "cempinom",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:179, y:50},
               {x:357, y:100},
@@ -94,14 +126,39 @@
             ]
           }
         ];
-        $scope.logo = $scope.logos[1]; // au départ on met "Logo et nom PP"
-        $scope.resolution = $scope.logo.resolutions[1]; // au départ on met "Logo et nom PP"
+
+        // methodes
+        $scope.typedescr = function(t) {
+          return {
+            "png" : "PNG 24bits (bitmap avec transparence)",
+            "gif" : "GIF 256 couleurs (bitmap sur fond blanc)",
+            "jpg" : "JPG (bitmap sur fond blanc)",
+            "svg" : "SVG (vectoriel)",
+            "pdf" : "PDF (vectoriel)",
+            "eps" : "EPS (vectoriel)",
+            "ps" : "PS (vectoriel)",
+            "tikz" : "TikZ (vectoriel)"
+          }[t];
+        };
+        $scope.setbitmap = function(r) {
+          $scope.bitmap = ($scope.typedefichier == 'png' ||
+                           $scope.typedefichier == 'gif' ||
+                           $scope.typedefichier == 'jpg');
+        };
         $scope.pixels = function(r) {
           return ""+r.x+" x "+r.y+" pixels";
         };
         $scope.forfile = function(r) {
           return "_"+r.x+"_"+r.y;
-        }
+        };
+
+        // watch
+        $scope.$watch("typedefichier",function(){$scope.setbitmap();});
+
+        // init
+        $scope.logo = $scope.logos[1]; // au départ on met "Logo et nom PP"
+        $scope.typedefichier = $scope.logo.types[0]; // au départ en PNG
+        $scope.resolution = $scope.logo.resolutions[1]; // résolution de départ
       }
     </script>
   </head>
@@ -117,27 +174,16 @@
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4 text-center">
 
-        <!-- Quel logo ? -->
-        <select class="form-control" ng-model="logo" ng-options="l.name for l in logos" ng-change="resolution=logo.resolutions[1]">
-        </select>
+        <!-- Choix logo -->
+        <select class="form-control" ng-model="logo" ng-options="l.name for l in logos" ng-change="typedefichier=logo.types[0];resolution=logo.resolutions[1];"></select>
         <br />
 
-        <!-- Type de fichier ? -->
-        <select class="form-control" ng-model="typedefichier" ng-init="typedefichier='png';bitmap =true" ng-change="bitmap = typedefichier == 'png' || typedefichier == 'gif' || typedefichier == 'jpg'">
-          <option value="pdf">PDF (vectoriel)</option>
-          <option value="svg">SVG (vectoriel)</option>
-          <option value="eps">EPS (vectoriel)</option>
-          <option value="ps"> PS (vectoriel)</option>
-          <option value="tikz">TikZ (vectoriel)</option>
-          <option value="png">PNG 24bits (bitmap avec transparence)</option>
-          <option value="gif" selected="selected">GIF 256 couleurs (bitmap sur fond blanc)</option>
-          <option value="jpg">JPG (bitmap sur fond blanc)</option>
-        </select>
+        <!-- Type de fichier -->
+        <select class="form-control" ng-model="typedefichier" ng-options="typedescr(t) for t in logo.types"></select>
         <br />
 
-        <!-- Résolution ? -->
-        <select class="form-control" ng-model="resolution" ng-options="pixels(r) for r in logo.resolutions" ng-show="bitmap">
-        </select>
+        <!-- Résolution -->
+        <select class="form-control" ng-model="resolution" ng-options="pixels(r) for r in logo.resolutions" ng-show="bitmap"></select>
         <br />
 
         <!-- C'est parti ! -->
