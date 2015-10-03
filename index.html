@@ -151,12 +151,21 @@
         $scope.forfile = function(r) {
           return "_"+r.x+"_"+r.y;
         };
+        $scope.logofrombase = function(base){
+          var i = 1; // Logo et nom PP
+          if (base) {
+            for (i=$scope.logos.length-1;  i>=0; i--)
+              if ($scope.logos[i].base == base) break;
+            i = i < 0 ? 1 : i;
+          }
+          $scope.logo = $scope.logos[i];
+        };
 
         // watch
         $scope.$watch("typedefichier",function(){$scope.setbitmap();});
 
         // init
-        $scope.logo = $scope.logos[1]; // au départ on met "Logo et nom PP"
+        $scope.logofrombase(document.URL.split("#")[1]); // le logo du url (ex:#frmnom)
         $scope.typedefichier = $scope.logo.types[0]; // au départ en PNG
         $scope.resolution = $scope.logo.resolutions[1]; // résolution de départ
       }
