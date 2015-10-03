@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script>
       function DownloadCtrl($scope){
-        // logos
+        // =============== données pour les logos ===============
         $scope.logos = [
           {
             name : "Logo Paul Painlevé",
@@ -127,7 +127,9 @@
           }
         ];
 
-        // methodes
+        // =============== méthodes ===============
+
+        // renvoie la description du type de fichier
         $scope.typedescr = function(t) {
           return {
             "png" : "PNG 24bits (bitmap avec transparence)",
@@ -140,17 +142,24 @@
             "tikz" : "TikZ (vectoriel)"
           }[t];
         };
+        // renvoie "true" si c'est une image bitmap
+        //  ceci permet d'afficher ou non la sélection de la résolution
         $scope.setbitmap = function(r) {
           $scope.bitmap = ($scope.typedefichier == 'png' ||
                            $scope.typedefichier == 'gif' ||
                            $scope.typedefichier == 'jpg');
         };
+        // renvoie la résolution pour la liste des choix (ex "100 x 300 pixels")
         $scope.pixels = function(r) {
           return ""+r.x+" x "+r.y+" pixels";
         };
+        // renvoie la résolution pour coller au nom du fichier (ex "_100_300")
         $scope.forfile = function(r) {
           return "_"+r.x+"_"+r.y;
         };
+        // permet de sélectionner le logo à partir de l'url de la page
+        //  par exemple si le url se termine par "#frm",
+        //  le logo ayant pour base "frm" sera sélectionné
         $scope.logofrombase = function(base){
           var i = 1; // Logo et nom PP
           if (base) {
@@ -161,25 +170,26 @@
           $scope.logo = $scope.logos[i];
         };
 
-        // watch
+        // les variable observé pour changement
+        //  si "typedefichier" change alors "bitmap" est mis en fonction à true ou false
         $scope.$watch("typedefichier",function(){$scope.setbitmap();});
 
-        // init
+        // initialisation
         $scope.logofrombase(document.URL.split("#")[1]); // le logo du url (ex:#frmnom)
-        $scope.typedefichier = $scope.logo.types[0]; // au départ en PNG
-        $scope.resolution = $scope.logo.resolutions[1]; // résolution de départ
+        $scope.typedefichier = $scope.logo.types[0]; // le type par défaut est PNG
+        $scope.resolution = $scope.logo.resolutions[1]; // résolution par défaut
       }
     </script>
   </head>
 
   <body ng-app>
 
-    <!-- Le formulaire -->
+    <!-- =============== Le formulaire =============== -->
     <div class="jumbotron container-fluid">
       <div class="row" ng-controller="DownloadCtrl">
 
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 text-center">
-          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.gif" alt="Logo Paul Painlevé" /><p></p>
+          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.gif" alt="{{logo.name}}" title="{{logo.name}}"/>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4 text-center">
 
@@ -198,10 +208,11 @@
         <!-- C'est parti ! -->
         <a class="btn btn-primary btn-lg" role="button" ng-href="{{logo.folder}}/{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}" download="{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}">Télécharger</a>
         </div>
-      </div>
+      </div><!-- fin DownloadCtrl -->
     </div>
+    <!-- fin du formulaire -->
 
-    <!-- Les informations -->
+    <!-- =============== Les informations =============== -->
     <div class="container">
 
       <!-- LaTeX -->
@@ -213,50 +224,47 @@
         Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez <a href="latex/labopp.sty">le télécharger ici</a>.
         Vous pouvez le mettre soit avec les autres bibliothèques LaTeX, soit dans le même répertoire que le fichier latex.
       </p>
-      <p>
-        <div class="alert alert-warning" role="alert">
-          <strong>Attention :</strong>
-          <ul>
-            <li>Pour que l'en-tête et le pied de page se mettent en place, il faut compiler deux fois.</li>
-            <li>Si vous avez des problèmes avec la compilation (probablement dû à votre version de de Ti<i>k</i>Z) :
-              <ul>
-                <li>
-                  Il existe une version de <a href="latex/tikz_v2.1/labopp.sty">labopp.sty</a> compatible avec l'ancienne version 2.1 de Ti<i>k</i>Z.
-                </li>
-                <li>
-                  Il existe également une version simplifiée de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, qui n'utilise pas Ti<i>k</i>Z. Pour pouvoir l'utiliser, en plus de la bibliothèque elle même, vous avez besoin de deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>. Pour l'utilisation de ce style vous pouvez consulter le modèle <a href="latex/exemple_lettre_notikz.tex">exemple_lettre_notikz.tex</a>, ainsi que le résultat de la compilation avec pdflatex <a href="latex/exemple_lettre_notikz.pdf">exemple_lettre_notikz.pdf</a>.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </p>
-      <p>
-        <strong>Exemples :</strong>
+      <div class="alert alert-warning" role="alert">
+        <strong>Attention :</strong>
         <ul>
-          <li>
-            <p>
-              Utilisation de la bibliothèque <code>labopp</code> : le résultat en <a href="latex/exemple_logo.pdf">PDF</a> et sa source en <a href="latex/exemple_logo.tex">LaTeX</a>.
-            </p>
-            <div class="alert alert-warning" role="alert">
-              Comme <i>fancyvrb</i> a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : <a href="latex/exemple_logo_utf8.pdf">PDF</a> et la source <a href="latex/exemple_logo_utf8.tex">LaTeX</a>.
-            </div>
+          <li>Pour que l'en-tête et le pied de page se mettent en place, il faut compiler deux fois.</li>
+          <li>Si vous avez des problèmes avec la compilation (probablement dû à votre version de de Ti<i>k</i>Z) :
+            <ul>
+              <li>
+                Il existe une version de <a href="latex/tikz_v2.1/labopp.sty">labopp.sty</a> compatible avec l'ancienne version 2.1 de Ti<i>k</i>Z.
+              </li>
+              <li>
+                Il existe également une version simplifiée de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, qui n'utilise pas Ti<i>k</i>Z. Pour pouvoir l'utiliser, en plus de la bibliothèque elle même, vous avez besoin de deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>. Pour l'utilisation de ce style vous pouvez consulter le modèle <a href="latex/exemple_lettre_notikz.tex">exemple_lettre_notikz.tex</a>, ainsi que le résultat de la compilation avec pdflatex <a href="latex/exemple_lettre_notikz.pdf">exemple_lettre_notikz.pdf</a>.
+              </li>
+            </ul>
           </li>
-          <li>
-            <p>
-              Lettre type du labo : le résultat en <a href="latex/exemple_lettre.pdf">PDF</a> et sa source en <a href="latex/exemple_lettre.tex">LaTeX</a>.</li>
-            </p>
         </ul>
-      </p>
+      </div>
+      <p><strong>Exemples :</strong></p>
+      <ul>
+        <li>
+          <p>
+            Utilisation de la bibliothèque <code>labopp</code> : le résultat en <a href="latex/exemple_logo.pdf">PDF</a> et sa source en <a href="latex/exemple_logo.tex">LaTeX</a>.
+          </p>
+          <div class="alert alert-warning" role="alert">
+            Comme <i>fancyvrb</i> a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : <a href="latex/exemple_logo_utf8.pdf">PDF</a> et la source <a href="latex/exemple_logo_utf8.tex">LaTeX</a>.
+          </div>
+        </li>
+        <li>
+          Lettre type du labo : le résultat en <a href="latex/exemple_lettre.pdf">PDF</a> et sa source en <a href="latex/exemple_lettre.tex">LaTeX</a>.
+        </li>
+      </ul>
 
+      <!-- Word -->
       <h2 id="word" >Word</h2>
       <p>
         Voici un fichier de lettre type du labo : le résultat en <a href="doc/exemple_lettre_doc.pdf">PDF</a> et sa source en <a href="doc/exemple_lettre.docx">DOCX</a>, en <a href="doc/exemple_lettre.doc">DOC</a> et en <a href="doc/exemple_lettre.odt">ODT</a>.
-        <div class="alert alert-warning" role="alert">
-          <em>Remarque :</em> Les images dans le fichier sont pixelisées (GIF/PNG).
-        </div>
       </p>
+      <div class="alert alert-warning" role="alert">
+        <em>Remarque :</em> Les images dans le fichier sont pixelisées (GIF/PNG).
+      </div>
 
+      <!-- Autres -->
       <h2 id="autres">Autres</h2>
       Dans cette section vous pouvez trouver d'autres fichiers utiles.
       <ul>
@@ -269,10 +277,11 @@
         <li>Icône du <strong>favori labo</strong> : <a href="favicon.ico">favicon.ico</a> (pour mettre à la racine du site web ou à utiliser dans une page avec &lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;icon&quot; /&gt;)</li>
       </ul>
       <div class="alert alert-warning" role="alert">
-      La police utilisée dans le logo est <a href="http://en.wikipedia.org/wiki/Baskerville">Baskerville (Old Face)</a>.
+        La police utilisée dans le logo est <a href="http://en.wikipedia.org/wiki/Baskerville">Baskerville (Old Face)</a>.
       </div>
 
-      <h2 id="autres">Liens</h2>
+      <!-- Liens -->
+      <h2 id="liens">Liens</h2>
       Quelques autres endroits où on trouve des logos :
       <ul>
         <li>sur la page de <a href="http://ext.boulgour.com/lifl/beaufils/logos/">Bruno BEAUFILS</a></li>
@@ -281,8 +290,11 @@
     </div>
 
 
-    <!-- Le ruban GitHub -->
-    <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:768px){#forkongithub{position:fixed;display:block;top:0;left:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:35px;left:-50px;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/ktzanev/logolabopp">clonez-moi sur GitHub</a></span>
+    <!-- =============== Le ruban GitHub =============== -->
+    <div>
+      <style type="text/css" scoped>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:768px){#forkongithub{position:fixed;display:block;top:0;left:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:35px;left:-50px;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
+      <span id="forkongithub"><a href="https://github.com/ktzanev/logolabopp/">clonez-moi sur GitHub</a></span>
+    </div>
 
   </body>
 </html>
