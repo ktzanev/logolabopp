@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  customization (examples) :
+%
+%   \tikzset{textheader/.style={text width=7cm, gray}} % width for your name
+%   \setlength{\destlen}{7cm} % width of the destination address
+%   \setlength{\explen}{7cm} % width for your signature name
+%
+%  to put header and/or footer on every page:
+%   \usepackage{everypage}
+%   and then for example :
+%     \AddEverypageHook{\laboheader}
+%     \AddThispageHook{\textheader{...}}
+%  or if you want to put it only on odd pages
+%   \usepackage{everypage}
+%   \usepackage{ifthen}
+%   and then
+%    \AddEverypageHook{\ifthenelse{\isodd{\thepage}}{\laboheader \labofooter}{}}
+%    \AddThispageHook{\textheader{...}}
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage[top=42mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
+\usepackage[english]{babel}
+\usepackage{labopp}
+
+\begin{document}
+\pagestyle{empty}
+% ---------------------------------------------------------- labo's header
+\laboheader
+% ---------------------------------------------------------- labo's footer
+\labofooter
+% ---------------------------------------------------------- you
+\textheader{%
+\textbf{First name LAST NAME}\newline
+My position\newline
+prenom.nom@math.univ-lille1.fr\newline
++33(0)320 43X XXX
+}
+% ---------------------------------------------------------- recipient
+\begin{destinataire}
+\textbf{prof. Frodo BAGGINS}\\
+Shire\\
+XXXXX MIDDLE-EARTH\\
+\end{destinataire}
+
+\today
+\vspace{1cm}
+
+% ============================================================= the letter
+\hspace{4cm}My Dear Frodo,
+\vspace{4mm}
+
+{\setlength{\baselineskip}{1.2\baselineskip}
+This is an example of a letter of our laboratory.
+
+Euclid's Elements is a mathematical and geometric treatise consisting of 13 books written by the ancient Greek mathematician Euclid in Alexandria, Ptolemaic Egypt c. 300 BC. It is a collection of definitions, postulates (axioms), propositions (theorems and constructions), and mathematical proofs of the propositions.
+
+The thirteen books cover Euclidean geometry and the ancient Greek version of elementary number theory. The work also includes an algebraic system that has become known as geometric algebra, which is powerful enough to solve many algebraic problems, including the problem of finding the square root of a number.
+
+The Elements is the second oldest extant Greek mathematical treatises after Autolycus' \emph{On the Moving Sphere}, and it is the oldest extant axiomatic deductive treatment of mathematics. It has proven instrumental in the development of logic and modern science. According to Proclus the term ``element'' was used to describe a theorem that is all-pervading and helps furnishing proofs of many other theorems. The word ``element'' is in the Greek language the same as ``letter''.
+}
+
+% ---------------------------------------------------------- your signature
+
+\vspace{1cm}\hspace{5cm}Yours sincerely
+
+\setlength{\explen}{8cm}
+\begin{expediteur}
+\textbf{My--First--Name MY--FAMILY--NAME}
+\end{expediteur}
+
+\end{document}

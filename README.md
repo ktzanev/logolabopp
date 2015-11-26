@@ -14,7 +14,7 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
 
 >**Attention :** 
 >   * Pour que l'en-tête et le pied de page se mettent en place, il faut compiler deux fois.
->   * Si vous avez des problèmes avec la compilation de TiKz, il existe une version simplifiée du style [laboppnotikz.sty](https://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty). Pour pouvoir l'utiliser vous avez besoin de deux images en pdf [logonompp.pdf](https://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](https://ktzanev.github.io/logolabopp/latex/labofooter.pdf). Pour l'utilisation de ce style vous pouvez consulter le modèle [exemple_lettre_notikz.tex](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex), ainsi que le résultat de la compilation avec pdflatex [exemple_lettre_notikz.pdf](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf).
+>   * Si vous avez des problèmes avec la compilation de TiKz, il existe une version simplifiée du style [laboppnotikz.sty](https://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty). Pour pouvoir l'utiliser vous avez besoin de deux images en pdf [logonompp.pdf](https://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](https://ktzanev.github.io/logolabopp/latex/labofooter.pdf). Pour l'utilisation de ce style vous pouvez consulter le modèle [exemple_lettre_notikz.tex](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex) (ou sa version [anglaise](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_en.tex)), ainsi que le résultat de la compilation avec pdflatex [exemple_lettre_notikz.pdf](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf).
 >   * Il existe également une version de [labopp.sty](https://ktzanev.github.io/logolabopp/latex/tikz_v2.1/labopp.sty) compatible avec l'ancienne version 2.1 de TikZ.
 
 **Exemples :**
@@ -22,7 +22,9 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
 * Utilisation de la bibliothèque <code>labopp</code> : le résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_logo.pdf) et sa [source en LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_logo.tex).
   > Comme *fancyvrb* a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.pdf) et [la source LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.tex).
 
-* Lettre type du labo : le résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.pdf) et [sa source en LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.tex).
+* Lettre type du labo 
+    * version française : le résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.pdf) et [sa source en LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.tex);
+    * english version : the result in [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_en.pdf) and its [LaTeX source](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_en.tex).
 
 Word
 ----
