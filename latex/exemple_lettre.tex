@@ -2,33 +2,27 @@
 %
 %  pour personnaliser (exemples) :
 %
-%   \tikzset{textheader/.style={text width=7cm, gray}}
-%   \setlength{\destlen}{7cm}
-%   \setlength{\explen}{7cm}
-%
-%  options \`a utiliser dans []
-%   - draw=<color>
-%   - thin | thick | line width=<size>
-%   - fill=<color>
-%   - shade, top color=<color>, bottom color=<color>
+%   \tikzset{textheader/.style={text width=7cm, gray}} % largeur pour votre nom
+%   \setlength{\destlen}{7cm} % largeur pour l'adresse du d\'estinataire
+%   \setlength{\explen}{7cm} % largeur pour la signature de l'expeditaur
 %
 %  pour mettre l'en-t\^ete ou/et le pied de page \`a chaque page:
 %   \usepackage{everypage}
-%  et apr\`es pas exemple :
-%   \AddEverypageHook{\laboheader}
-%   \AddThispageHook{\textheader{...}}
+%   et apr\`es par exemple :
+%     \AddEverypageHook{\laboheader}
+%     \AddThispageHook{\textheader{...}}
 %  ou pour mettre que sur les pages impaires
 %   \usepackage{everypage}
 %   \usepackage{ifthen}
-%  et apr\`es
-%   \AddEverypageHook{\ifthenelse{\isodd{\thepage}}{\laboheader \labofooter}{}}
-%   \AddThispageHook{\textheader{...}}
+%   et apr\`es
+%    \AddEverypageHook{\ifthenelse{\isodd{\thepage}}{\laboheader \labofooter}{}}
+%    \AddThispageHook{\textheader{...}}
 %
 \documentclass[a4paper,11pt]{article}
 \usepackage[top=42mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
 \usepackage[french]{babel}
-\usepackage{tikz}
 \usepackage{labopp}
+
 \begin{document}
 \pagestyle{empty}
 % ---------------------------------------------------------- l'en-t\^ete du labo
