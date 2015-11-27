@@ -35,11 +35,11 @@
 % ------------------- for babel[french] compatibility --------------------------
 % if babel is loaded (before labopp !!!)
 % and is in french
-% add \shorthandoff{:;!?}; at the begining of every tikz picture
+% add \NoAutoSpacing; at the begining of every tikz picture
 \ifx\undefined\addto
 \relax
 \else
-\addto\captionsfrench{\tikzset{every picture/.style={execute at begin picture={\shorthandoff{:;!?};}}}}
+\addto\captionsfrench{\tikzset{every picture/.style={execute at begin picture={\NoAutoSpacing;}}}}
 \fi
 
 % ------------------- univ-lille1 colors ------------------------
