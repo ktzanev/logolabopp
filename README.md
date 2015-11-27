@@ -20,7 +20,7 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
 **Exemples :**
 
 * Utilisation de la bibliothèque <code>labopp</code> : le résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_logo.pdf) et sa [source en LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_logo.tex).
-  > Comme *fancyvrb* a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.pdf) et [la source LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.tex).
+  > Comme *fancyvrb* a du mal avec les accents, voilà la version en utf-8 compilée avec XeLaTeX : [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.pdf) et [la source LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.tex).
 
 * Lettre type du labo n'utilisant pas Ti*k*Z
     > Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, [laboppnotikz.sty](https://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty), et des deux images en pdf : [logonompp.pdf](https://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](https://ktzanev.github.io/logolabopp/latex/labofooter.pdf).
