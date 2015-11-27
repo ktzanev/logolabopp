@@ -18,7 +18,7 @@
         // =============== données pour les logos ===============
         $scope.logos = [
           {
-            name : "Logo Paul Painlevé",
+            name : "Paul Painlevé : logo ",
             folder : "logopp",
             base : "logopp",
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
@@ -30,7 +30,7 @@
             ]
           },
           {
-            name : "Logo et nom Paul Painlevé",
+            name : "Paul Painlevé : logo et nom ",
             folder : "logonompp",
             base : "logonompp",
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
@@ -42,19 +42,7 @@
             ]
           },
           {
-            name : "Logo CNRS",
-            folder : "cnrs",
-            base : "cnrs",
-            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps"],
-            resolutions : [
-              {x:50, y:50},
-              {x:100, y:100},
-              {x:300, y:300},
-              {x:700, y:700}
-            ]
-          },
-          {
-            name : "Logo Université (de) Lille 1",
+            name : "Université (de) Lille 1 : logo",
             folder : "ul1",
             base : "ul1",
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
@@ -66,7 +54,7 @@
             ]
           },
           {
-            name : "Logo et nom Université (de) Lille 1",
+            name : "Université (de) Lille 1 : logo et nom",
             folder : "ul1nom",
             base : "ul1nom",
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
@@ -78,7 +66,7 @@
             ]
           },
           {
-            name : "Logo et nom UFR",
+            name : "UFR de Mathématiques : logo et nom",
             folder : "ul1ufr",
             base : "ul1ufr",
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
@@ -90,7 +78,19 @@
             ]
           },
           {
-            name : "Logo Fédération",
+            name : "CNRS : logo",
+            folder : "cnrs",
+            base : "cnrs",
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps"],
+            resolutions : [
+              {x:50, y:50},
+              {x:100, y:100},
+              {x:300, y:300},
+              {x:700, y:700}
+            ]
+          },
+          {
+            name : "Fédération : logo",
             folder : "frm",
             base : "frm",
             types : ["png", "gif", "jpg", "pdf", "eps", "ps"],
@@ -102,7 +102,7 @@
             ]
           },
           {
-            name : "Logo et nom Fédération",
+            name : "Fédération : logo et nom",
             folder : "frmnom",
             base : "frmnom",
             types : ["png", "gif", "jpg", "pdf", "eps", "ps"],
@@ -114,7 +114,7 @@
             ]
           },
           {
-            name : "Logo CEMPI",
+            name : "CEMPI : logo",
             folder : "cempi",
             base : "cempi",
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
@@ -126,7 +126,7 @@
             ]
           },
           {
-            name : "Logo et nom CEMPI",
+            name : "CEMPI : logo et nom",
             folder : "cempinom",
             base : "cempinom",
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
@@ -201,7 +201,7 @@
       <div class="row" ng-controller="DownloadCtrl">
 
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 text-center">
-          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.gif" alt="{{logo.name}}" title="{{logo.name}}"/>
+          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.gif" alt="{{logo.name}}" title="{{logo.name}}" style="margin-bottom: 1em;"/>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4 text-center">
 
@@ -263,12 +263,35 @@
           </div>
         </li>
         <li>
-          Lettre type du labo
+          <p>Lettre type du labo n'utilisant pas Ti<i>k</i>Z</p>
+          <div class="alert alert-warning" role="alert">
+            Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, et des deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>.
+          </div>
           <ul>
-            <li>versoin française : le résultat en <a href="latex/exemple_lettre.pdf">PDF</a> et sa source en <a href="latex/exemple_lettre.tex">LaTeX</a>;</li>
-            <li>english version : the result in <a href="latex/exemple_lettre_en.pdf">PDF</a> and its <a href="latex/exemple_lettre_en.tex">LaTeX</a> source.</li>
+            <li>version française :
+              <ul>
+                  <li><a href="latex/exemple_lettre_notikz.tex">source LaTeX an ascii</a> à compiler avec PDFLaTeX pour obtenir ce résultat en <a href="latex/exemple_lettre_notikz.pdf">PDF</a>;</li>
+                  <li><a href="latex/exemple_lettre_notikz_utf8.tex">source LaTeX en UTF8</a> à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en <a href="latex/exemple_lettre_notikz_utf8.pdf">PDF</a>.</li>
+                </ul>
+            </li>
+            <li>english version : <a href="latex/exemple_lettre_notikz_en.tex">LaTeX source</a> that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in <a href="latex/exemple_lettre_notikz_en.pdf">PDF</a>.</li>
           </ul>
-
+          <p></p>
+        </li>
+        <li>
+          <p>Lettre type du labo utilisant Ti<i>k</i>Z</p>
+          <div class="alert alert-warning" role="alert">
+            Doit être compilée deux fois pour que l'en-tête et le bas-de-page se mettent en place.
+          </div>
+          <ul>
+            <li>version française :
+              <ul>
+                  <li><a href="latex/exemple_lettre.tex">source LaTeX an ascii</a> à compiler avec PDFLaTeX pour obtenir ce résultat en <a href="latex/exemple_lettre.pdf">PDF</a>;</li>
+                  <li><a href="latex/exemple_lettre_utf8.tex">source LaTeX en UTF8 </a> à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en <a href="latex/exemple_lettre_utf8.pdf">PDF</a>.</li>
+                </ul>
+            </li>
+            <li>english version : <a href="latex/exemple_lettre_en.tex">LaTeX source</a> that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in <a href="latex/exemple_lettre_en.pdf">PDF</a>.</li>
+          </ul>
         </li>
       </ul>
 
@@ -285,12 +308,12 @@
       <h2 id="autres">Autres</h2>
       Dans cette section vous pouvez trouver d'autres fichiers utiles.
       <ul>
-        <li><strong>Logo CNRS</strong> (petit en gris) : l'original en <a href="autres/logocnrsinsmi_gris_petit.tikz">TikZ</a>, et les bitmaps en <a href="autres/logocnrsinsmi_gris_petit.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/logocnrsinsmi_gris_petit.png">PNG&nbsp;(avec transparence)</a>.</li>
-        <li><strong>Logo de l'Université</strong> (petit en gris) : l'original en <a href="autres/logoul1_gris_petit.tikz">TikZ</a>, et les bitmaps en <a href="autres/logoul1_gris_petit.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/logoul1_gris_petit.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li><strong>Logo CNRS</strong> (petit en gris) : l'original en <a href="autres/logocnrsinsmi_gris_petit.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/logocnrsinsmi_gris_petit.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/logocnrsinsmi_gris_petit.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li><strong>Logo de l'Université</strong> (petit en gris) : l'original en <a href="autres/logoul1_gris_petit.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/logoul1_gris_petit.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/logoul1_gris_petit.png">PNG&nbsp;(avec transparence)</a>.</li>
         <li><strong>Le pied de page du labo</strong> : en <a href="doc/labofooter.png">PNG</a>.</li>
-        <li>Icône <strong>téléphone</strong> :l'original en <a href="autres/phone.tikz">TikZ</a>, et les bitmaps en <a href="autres/phone.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/phone.png">PNG&nbsp;(avec transparence)</a>.</li>
-        <li>Icône <strong>fax</strong> : l'original en <a href="autres/fax.tikz">TikZ</a>, et les bitmaps en <a href="autres/fax.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/fax.png">PNG&nbsp;(avec transparence)</a>.</li>
-        <li>Icône <strong>monde</strong> : l'original en <a href="autres/world.tikz">TikZ</a>, et les bitmaps en <a href="autres/world.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/world.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li>Icône <strong>téléphone</strong> :l'original en <a href="autres/phone.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/phone.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/phone.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li>Icône <strong>fax</strong> : l'original en <a href="autres/fax.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/fax.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/fax.png">PNG&nbsp;(avec transparence)</a>.</li>
+        <li>Icône <strong>monde</strong> : l'original en <a href="autres/world.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/world.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/world.png">PNG&nbsp;(avec transparence)</a>.</li>
         <li>Icône du <strong>favori labo</strong> : <a href="favicon.ico">favicon.ico</a> (pour mettre à la racine du site web ou à utiliser dans une page avec &lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;icon&quot; /&gt;)</li>
       </ul>
       <div class="alert alert-warning" role="alert">

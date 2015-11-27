@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  pour personnaliser (exemples) :
+%
+%   \setlength{\destlen}{7cm} % largeur pour l'adresse du déstinataire
+%   \setlength{\explen}{7cm} % largeur pour la signature de l'expeditaur
+%
+%  pour mettre l'en-tête ou/et le pied de page à chaque page :
+%   \usepackage{everypage}
+%   et après par exemple :
+%    \AddEverypageHook{\laboheader}
+%    \AddThispageHook{\textheader{...}}
+%
+%  ou pour mettre que sur les pages impaires
+%   \usepackage{everypage}
+%   \usepackage{ifthen}
+%   et après
+%    \AddEverypageHook{\ifthenelse{\isodd{\thepage}}{\laboheader \labofooter}{}}
+%    \AddThispageHook{\textheader{...}}
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage[top=42mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
+\usepackage{iftex}
+\ifPDFTeX % PDFLaTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\else % LuaLaTeX & XeLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{laboppnotikz}
+
+\begin{document}
+\pagestyle{empty}
+% ---------------------------------------------------------- l'en-tête du labo
+\laboheader
+% ---------------------------------------------------------- le bas de la page
+\labofooter
+% ---------------------------------------------------------- les références de l'auteur/expéditeur
+\textheader{\textbf{Prénom NOM}\newline
+Ma fonction\newline
+prenom.nom@math.univ-lille1.fr\newline
++33(0)320 43X XXX}
+% ---------------------------------------------------------- le destinataire et son adresse
+\begin{destinataire}
+\textbf{prof. Le DESTINATAIRE}\\
+rue de la destination\\
+XXXXX Ville de destination\\
+\end{destinataire}
+
+% ---------------------------------------------------------- l'objet de la lattre
+\objet{Le bla-bla d'objet de cette lettre!}
+
+% ============================================================= la lettre
+\hspace{4cm}Cher Destinataire,
+\vspace{4mm}
+
+{\setlength{\baselineskip}{1.2\baselineskip}
+Voilà l'exemple type d'une lettre du laboratoire.
+
+Les Éléments sont une compilation du savoir géométrique et restèrent le noyau de l'enseignement mathématique pendant près de 2000 ans. Il se peut qu'aucun des résultats contenus dans les Éléments ne soit d'Euclide, mais l'organisation de la matière et son exposé lui sont dus.
+
+Les Éléments sont divisés en treize livres. Les livres 1 à 6, géométrie plane, les livres 7 à 9, théorie des rapports, le livre 10, la théorie de nombres irrationnels d'Eudoxe, et enfin les livres 11 à 13 de géométrie dans l'espace. Le livre se termine par l'étude des propriétés des cinq polyèdres réguliers et une démonstration de leur existence. Les Éléments sont remarquables par la clarté avec laquelle les théorèmes sont énoncés et démontrés.
+
+Plus d'un millier d'éditions manuscrites des Éléments ont été publiées avant la première version imprimée en 1482. La rigueur n'y est pas toujours à la hauteur des canons actuels, mais la méthode consistant à partir d'axiomes, de postulats et de définitions, pour déduire un maximum de propriétés des objets considérés, le tout dans un ensemble organisé, était nouvelle pour l'époque. Les Éléments durent leur succès à leur supériorité d'organisation, de systématisation et de logique mais pas d'exhaustivité (ni conique, ni résolution par neusis2 ou ajustement). Les dernières recherches entreprises en histoire des mathématiques tendent à prouver qu'Euclide n'est pas le seul auteur des Éléments. Il était vraisemblablement entouré d'un collège de disciples ayant tous participé à leur élaboration.
+}
+
+% ---------------------------------------------------------- la signature de l'expéditeur à mettre au dessus de son nom
+
+\vspace{1cm}
+
+Villeneuve d'Ascq, le \today
+
+\begin{expediteur}
+\textbf{Mon prénom MON--NOM}
+\end{expediteur}
+
+
+\end{document}
