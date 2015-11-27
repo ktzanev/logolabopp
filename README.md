@@ -23,20 +23,20 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
   > Comme *fancyvrb* a du mal avec les accents, voilà les versions en utf-8 compilées avec LuaLaTeX : [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.pdf) et [la source LaTeX](https://ktzanev.github.io/logolabopp/latex/exemple_logo_utf8.tex).
 
 * Lettre type du labo n'utilisant pas Ti*k*Z
-    > Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, [laboppnotikz.sty](latex/laboppnotikz.sty), et des deux images en pdf : [logonompp.pdf](logonompp/logonompp.pdf) et [labofooter.pdf](latex/labofooter.pdf).
+    > Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, [laboppnotikz.sty](https://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty), et des deux images en pdf : [logonompp.pdf](https://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](https://ktzanev.github.io/logolabopp/latex/labofooter.pdf).
     
     * version française :
-        - [source LaTeX an ascii](latex/exemple_lettre_notikz.tex) à compiler avec PDFLaTeX pour obtenir ce résultat en [PDF](latex/exemple_lettre_notikz.pdf);
-        - [source LaTeX an UTF8](latex/exemple_lettre_notikz_utf8.tex) à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en [PDF](latex/exemple_lettre_notikz_utf8.pdf);
-    * english version : [LaTeX source](latex/exemple_lettre_notikz_en.tex) that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in [PDF](latex/exemple_lettre_notikz_en.pdf).
+        - [source LaTeX an ascii](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex) à compiler avec PDFLaTeX pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf);
+        - [source LaTeX an UTF8](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_utf8.tex) à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_utf8.pdf);
+    * english version : [LaTeX source](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_en.tex) that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_en.pdf).
     
 * Lettre type du labo utilisant Ti*k*Z
     >  Doit être compilée deux fois pour que l'en-tête et le bas-de-page se mettent en place.
     
     * version française :
-        - [source LaTeX an ascii](latex/exemple_lettre.tex) à compiler avec PDFLaTeX pour obtenir ce résultat en [PDF](latex/exemple_lettre.pdf);
-        - [source LaTeX an UTF8](latex/exemple_lettre_utf8.tex) à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en [PDF](latex/exemple_lettre_utf8.pdf);
-    * english version : [LaTeX source](latex/exemple_lettre_en.tex) that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in [PDF](latex/exemple_lettre_en.pdf).
+        - [source LaTeX an ascii](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.tex) à compiler avec PDFLaTeX pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.pdf);
+        - [source LaTeX an UTF8](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_utf8.tex) à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_utf8.pdf);
+    * english version : [LaTeX source](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_en.tex) that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_en.pdf).
 
 Word
 ----
