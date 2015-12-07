@@ -14,7 +14,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
     <script>
-      function DownloadCtrl($scope){
+      function DownloadCtrl($scope, $timeout){
         // =============== données pour les logos ===============
         $scope.logos = [
           {
@@ -202,6 +202,27 @@
         $scope.logofrombase(document.URL.split("#")[1]); // le logo du url (ex:#frmnom)
         $scope.typedefichier = $scope.logo.types[0]; // le type par défaut est PNG
         $scope.resolution = $scope.logo.resolutions[1]; // résolution par défaut
+
+        $scope.showShareLink = function() {
+          if (!$scope.showlink)
+            return;
+          $scope.sharelink = "https://ktzanev.github.io/logolabopp/" +
+            $scope.logo.folder + "/" +
+            $scope.logo.base + ($scope.bitmap && $scope.forfile($scope.resolution) || (''))+ "." +
+            $scope.typedefichier;
+          $timeout($scope.selectShareLink, 0, false);
+        };
+
+        $scope.selectShareLink = function() {
+          if (!$scope.showlink)
+            return;
+          document.getElementById('sharelink').select();
+          document.getElementById('sharelink').focus();
+        };
+
+        if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+           document.getElementById("ctrlcmd").innerHTML = "Cmd";
+        }
       }
     </script>
   </head>
@@ -217,20 +238,30 @@
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4 text-center">
 
-        <!-- Choix logo -->
-        <select class="form-control" ng-model="logo" ng-options="l.name for l in logos" ng-change="typedefichier=logo.types[0];resolution=logo.resolutions[1];"></select>
-        <br />
+          <!-- Choix logo -->
+          <select class="form-control" ng-model="logo" ng-options="l.name for l in logos" ng-change="typedefichier=logo.types[0];resolution=logo.resolutions[1];"></select>
+          <br />
 
-        <!-- Type de fichier -->
-        <select class="form-control" ng-model="typedefichier" ng-options="typedescr(t) for t in logo.types"></select>
-        <br />
+          <!-- Type de fichier -->
+          <select class="form-control" ng-model="typedefichier" ng-options="typedescr(t) for t in logo.types"></select>
+          <br />
 
-        <!-- Résolution -->
-        <select class="form-control" ng-model="resolution" ng-options="pixels(r) for r in logo.resolutions" ng-show="bitmap"></select>
-        <br />
+          <!-- Résolution -->
+          <select class="form-control" ng-model="resolution" ng-options="pixels(r) for r in logo.resolutions" ng-show="bitmap"></select>
+          <br />
 
-        <!-- C'est parti ! -->
-        <a class="btn btn-primary btn-lg" role="button" ng-href="{{logo.folder}}/{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}" download="{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}">Télécharger</a>
+          <!-- C'est parti ! -->
+          <div class="form-group">
+            <a class="btn btn-success btn-lg" role="button" ng-href="{{logo.folder}}/{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}" download="{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}">Télécharger</a>
+            <a class="btn btn-warning btn-lg" role="button" type="button" ng-click="showlink=!showlink;showShareLink();">Lien</a>
+          </div>
+          <div ng-show="showlink" class="form-group has-warning">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-share"></i></span>
+              <input class="form-control" type="text" readonly="readonly" id="sharelink" ng-model="sharelink" ng-click="selectShareLink()" ng-blur="showlink=false"></input>
+            </div>
+            <label for="sharelink"><span id="ctrlcmd">Ctrl</span>-C pour copier</label>
+          </div>
         </div>
       </div><!-- fin DownloadCtrl -->
     </div>
@@ -326,7 +357,7 @@
         <li>Icône <strong>téléphone</strong> :l'original en <a href="autres/phone.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/phone.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/phone.png">PNG&nbsp;(avec transparence)</a>.</li>
         <li>Icône <strong>fax</strong> : l'original en <a href="autres/fax.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/fax.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/fax.png">PNG&nbsp;(avec transparence)</a>.</li>
         <li>Icône <strong>monde</strong> : l'original en <a href="autres/world.tikz">Ti<i>k</i>Z</a>, et les bitmaps en <a href="autres/world.gif">GIF&nbsp;(sur fond blanc)</a> et <a href="autres/world.png">PNG&nbsp;(avec transparence)</a>.</li>
-        <li>Icône du <strong>favori labo</strong> : <a href="favicon.ico">favicon.ico</a> (pour mettre à la racine du site web ou à utiliser dans une page avec &lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;icon&quot; /&gt;)</li>
+        <li>Icône du <strong>favori labo</strong> : <a href="favicon.ico">favicon.ico</a>, pour mettre à la racine du site web ou à utiliser dans une page avec <code>&lt;link href=&quot;https://ktzanev.github.io/logolabopp/favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;icon&quot; /&gt;</code>.</li>
       </ul>
       <div class="alert alert-warning" role="alert">
         La police utilisée dans le logo est <a href="http://en.wikipedia.org/wiki/Baskerville">Baskerville (Old Face)</a>.
