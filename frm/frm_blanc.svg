@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-23 -27.5 748 555" preserveAspectRatio="xMidYMid meet"  width="149.6pt" height="111pt">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-37 -27.5 777 555" preserveAspectRatio="xMidYMid meet"  width="155.4pt" height="111pt">
 <!--
     auteur du logo : Mathias Rousset
     version tikz : Kroum Tzanev
     date : 13 décembre 2015
-    size : 748x555 (rapport 1.36:1)
+    size : 777x555 (rapport 1.4:1)
  -->
 
-  <!-- <rect x="-23" y="-27.5" width="748" height="555" fill="black"/> -->
+  <!-- <rect x="-37" y="-27.5" width="777" height="555" fill="black"/> -->
 
   <g transform="translate(0,527.5) scale(1,-1)" style="stroke:none;fill-rule:nonzero;fill-opacity:1;fill:white">
     <!-- Logo -->
