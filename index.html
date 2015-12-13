@@ -20,9 +20,10 @@
         // =============== données pour les logos ===============
         $scope.logos = [
           {
-            name : "Paul Painlevé : logo ",
+            name : "Paul Painlevé : logo",
             folder : "logopp",
             base : "logopp",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:40, y:50},
@@ -32,21 +33,23 @@
             ]
           },
           {
-            name : "Paul Painlevé : logo et nom ",
+            name : "Paul Painlevé : logo et nom",
             folder : "logonompp",
             base : "logonompp",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:125, y:50},
               {x:250, y:100},
               {x:750, y:300},
-              {x:1725, y:700}
+              {x:1750, y:700}
             ]
           },
           {
             name : "Université (de) Lille 1 : logo",
             folder : "ul1",
             base : "ul1",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:45, y:50},
@@ -59,6 +62,7 @@
             name : "Université (de) Lille 1 : logo et nom",
             folder : "ul1nom",
             base : "ul1nom",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:107, y:50},
@@ -71,6 +75,7 @@
             name : "UFR de Mathématiques : logo et nom",
             folder : "ul1ufr",
             base : "ul1ufr",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:167, y:50},
@@ -83,6 +88,7 @@
             name : "CNRS : logo",
             folder : "cnrs",
             base : "cnrs",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:50, y:50},
@@ -95,6 +101,7 @@
             name : "CNRS : logo simplifié",
             folder : "cnrs-simple",
             base : "cnrs-simple",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:50, y:50},
@@ -107,6 +114,7 @@
             name : "Fédération : logo",
             folder : "frm",
             base : "frm",
+            monochrome : false,
             types : ["png", "gif", "jpg", "pdf", "eps", "ps"],
             resolutions : [
               {x:70, y:50},
@@ -119,6 +127,7 @@
             name : "Fédération : logo et nom",
             folder : "frmnom",
             base : "frmnom",
+            monochrome : false,
             types : ["png", "gif", "jpg", "pdf", "eps", "ps"],
             resolutions : [
               {x:198, y:50},
@@ -131,6 +140,7 @@
             name : "CEMPI : logo",
             folder : "cempi",
             base : "cempi",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:50, y:50},
@@ -143,6 +153,7 @@
             name : "CEMPI : logo et nom",
             folder : "cempinom",
             base : "cempinom",
+            monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
               {x:179, y:50},
@@ -170,10 +181,14 @@
         };
         // renvoie "true" si c'est une image bitmap
         //  ceci permet d'afficher ou non la sélection de la résolution
-        $scope.setbitmap = function(r) {
-          $scope.bitmap = ($scope.typedefichier == 'png' ||
-                           $scope.typedefichier == 'gif' ||
-                           $scope.typedefichier == 'jpg');
+        function isbitmap(t){return ['png','gif','jpg'].indexOf(t) >=0}
+        $scope.setbitmap = function() {
+          $scope.bitmap = isbitmap($scope.typedefichier);
+        };
+        //  ceci permet d'afficher ou non le lien vers le code <img>
+        function isokimg(t){return ['png','gif','jpg','svg'].indexOf(t) >=0}
+        $scope.setokimg = function() {
+          $scope.okimg = isokimg($scope.typedefichier);
         };
         // renvoie la résolution pour la liste des choix (ex "100 x 300 pixels")
         $scope.pixels = function(r) {
@@ -183,6 +198,37 @@
         $scope.forfile = function(r) {
           return "_"+r.x+"_"+r.y;
         };
+        // renvoie la résolution pour utiliser dans img (ex "width="100" height="300")
+        $scope.imgsize = function(r) {
+            return r ? " width=\""+r.x+"px\" height=\""+r.y+"px\"" : "";
+        }
+        // retourne le nom du fichier image (ex: "logopp_80_100.gif")
+        $scope.imgname = function(type,resolution) {
+          type = typeof type !== 'undefined' ? type : $scope.typedefichier;
+          resolution = typeof resolution !== 'undefined' ? resolution : $scope.resolution;
+          return $scope.logo.base +
+                ($scope.logo.monochrome ? $scope.monochrome : "") +
+                (isbitmap(type) ? $scope.forfile(resolution) : "") + "." + type;
+        }
+        // retourne le lien (absolu ou relatif) vers le fichier image (ex: "logopp/logopp_80_100.gif")
+        $scope.imgurl = function(absolute,type,resolution) {
+          return ((typeof absolute !== 'undefined') && absolute ? "https://ktzanev.github.io/logolabopp/" : "") +
+          $scope.logo.folder + "/" + $scope.imgname(type,resolution);
+        }
+        // remove gif and jpg for monochrome images
+        $scope.adaptformonochrome = function(a)
+        {
+          if (!$scope.monochrome)
+            return a;
+          var b = a.slice(); // fast copy of a !
+          var i;
+          i = b.indexOf("jpg");
+          if (i>=0) {b.splice(i,1)};
+          i = b.indexOf("gif");
+          if (i>=0) {b.splice(i,1)};
+          return b;
+        }
+
         // permet de sélectionner le logo à partir de l'url de la page
         //  par exemple si le url se termine par "#frm",
         //  le logo ayant pour base "frm" sera sélectionné
@@ -196,31 +242,43 @@
           $scope.logo = $scope.logos[i];
         };
 
-        // les variable observé pour changement
-        //  si "typedefichier" change alors "bitmap" est mis en fonction à true ou false
-        $scope.$watch("typedefichier",function(){$scope.setbitmap();});
-
-        // initialisation
-        $scope.logofrombase(document.URL.split("#")[1]); // le logo du url (ex:#frmnom)
-        $scope.typedefichier = $scope.logo.types[0]; // le type par défaut est PNG
-        $scope.resolution = $scope.logo.resolutions[1]; // résolution par défaut
-
         $scope.showShareLink = function() {
-          if (!$scope.showlink)
+          if (!$scope.showimgcode)
             return;
-          $scope.sharelink = "https://ktzanev.github.io/logolabopp/" +
-            $scope.logo.folder + "/" +
-            $scope.logo.base + ($scope.bitmap && $scope.forfile($scope.resolution) || (''))+ "." +
-            $scope.typedefichier;
+          $scope.sharelink = $scope.imgurl(true);
+          $scope.shareimg = "<img src=\""+$scope.sharelink+"\" alt=\""+$scope.logo.name+"\""+$scope.imgsize($scope.bitmap && $scope.resolution)+">"
           $timeout($scope.selectShareLink, 0, false);
         };
 
         $scope.selectShareLink = function() {
-          if (!$scope.showlink)
+          if (!$scope.showimgcode)
             return;
-          document.getElementById('sharelink').select();
-          document.getElementById('sharelink').focus();
+          document.getElementById('shareimg').select();
+          document.getElementById('shareimg').focus();
         };
+
+        // les variable observé pour changement
+        //  si "typedefichier" change alors "bitmap" est mis en fonction à true ou false
+        $scope.$watch("typedefichier",function(){$scope.setbitmap();});
+        //  si "typedefichier" change alors "okimg" est mis en fonction à true ou false
+        $scope.$watch("typedefichier",function(){$scope.setokimg();});
+
+        // initialisation
+        $scope.inittype = function() {
+          if ($scope.logo.types.indexOf($scope.typedefichier) < 0) {
+            $scope.typedefichier = $scope.logo.types[0]; // le type par défaut est PNG
+          }
+        }
+        $scope.initresolution = function() {
+          var i = $scope.resolution ? [50,100,300,700].indexOf($scope.resolution.y) : 1;
+          (i >= 0 || i < $scope.logo.resolutions.length) || (i = 1);
+          $scope.resolution = $scope.logo.resolutions[i]; // résolution par défaut
+        }
+
+        $scope.logofrombase(document.URL.split("#")[1]); // le logo du url (ex:#frmnom)
+        $scope.inittype();
+        $scope.monochrome=""; // en couleur par defaut
+        $scope.initresolution();
 
         if (navigator.userAgent.indexOf('Mac OS X') != -1) {
            document.getElementById("ctrlcmd").innerHTML = "Cmd";
@@ -236,16 +294,24 @@
       <div class="row" ng-controller="DownloadCtrl">
 
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 text-center">
-          <img class="img-thumbnail" ng-src="{{logo.folder}}/{{logo.base}}{{forfile(logo.resolutions[2])}}.gif" alt="{{logo.name}}" title="{{logo.name}}" style="margin-bottom: 1em;"/>
+          <img class="img-thumbnail" ng-src="{{imgurl(false,monochrome ? 'png' : 'gif',logo.resolutions[2])}}" alt="{{logo.name}}" title="{{logo.name}}" style="margin-bottom: 1em;{{monochrome =='_blanc'? 'background-color:black' : ''}}" style=""/>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-4 text-center">
 
           <!-- Choix logo -->
-          <select class="form-control" ng-model="logo" ng-options="l.name for l in logos" ng-change="typedefichier=logo.types[0];resolution=logo.resolutions[1];"></select>
+          <select class="form-control" ng-model="logo" ng-options="l.name for l in logos" ng-change="inittype();initresolution();"></select>
           <br />
 
+          <!-- Couleur ou monochrome -->
+          <select class="form-control" ng-model="monochrome" ng-show="logo.monochrome">
+            <option value="">en couleurs</option>
+            <option value="_noir">en noir</option>
+            <option value="_blanc">en blanc</option>
+          </select>
+          <br ng-show="logo.monochrome"/>
+
           <!-- Type de fichier -->
-          <select class="form-control" ng-model="typedefichier" ng-options="typedescr(t) for t in logo.types"></select>
+          <select class="form-control" ng-model="typedefichier" ng-options="typedescr(t) for t in adaptformonochrome(logo.types)"></select>
           <br />
 
           <!-- Résolution -->
@@ -254,15 +320,15 @@
 
           <!-- C'est parti ! -->
           <div class="form-group">
-            <a class="btn btn-success btn-lg" role="button" ng-href="{{logo.folder}}/{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}" download="{{logo.base}}{{bitmap && forfile(resolution) || ('')}}.{{typedefichier}}">Télécharger</a>
-            <a class="btn btn-warning btn-lg" role="button" type="button" ng-click="showlink=!showlink;showShareLink();">Lien</a>
+            <a class="btn btn-success btn-lg" role="button" ng-href="{{imgurl()}}" download="imgname()">Télécharger</a>
+            <a class="btn btn-warning btn-lg" role="button" type="button" ng-show="okimg" ng-click="showimgcode=!showimgcode;showShareLink();">&lt; img &gt;</a>
           </div>
-          <div ng-show="showlink" class="form-group has-warning">
+          <div ng-show="showimgcode" class="form-group has-warning">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-share"></i></span>
-              <input class="form-control" type="text" readonly="readonly" id="sharelink" ng-model="sharelink" ng-click="selectShareLink()" ng-blur="showlink=false" style="direction:rtl"></input>
+              <input class="form-control" type="text" readonly="readonly" id="shareimg" ng-model="shareimg" ng-click="selectShareLink()" ng-blur="showimgcode=false" style="direction:rtl"></input>
             </div>
-            <label for="sharelink"><span id="ctrlcmd">Ctrl</span>-C pour copier</label>
+            <label for="shareimg"><span id="ctrlcmd">Ctrl</span>-C pour copier</label>
           </div>
         </div>
       </div><!-- fin DownloadCtrl -->

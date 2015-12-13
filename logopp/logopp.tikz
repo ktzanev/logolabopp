@@ -1,3 +1,5 @@
+% auteur du logo : Kroum Tzanev
+% date : 2010
 \definecolor{vertfonce}{rgb}{0.105,0.349,0.188} % rgb(27,89,48)
 \definecolor{vertclaire}{rgb}{0.25,0.839,0.447} % rgb(64,214,114)
 
@@ -16,7 +18,6 @@
   border path/.style={insert path={(-1.5,-2) rectangle (1.5,2)}},
   up/.style = {shade, top color=vertclaire, bottom color=vertfonce},
   circles/.style = {draw=gray!70!vertclaire, opacity=0.3},
-  textlabo/.style = {fill=black},
   logo scale/.style={line width={#1*.4}, scale={#1*.25}}
 }
 

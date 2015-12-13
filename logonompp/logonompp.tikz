@@ -1,3 +1,5 @@
+% auteur du logo : Kroum Tzanev
+% date : 2010
 \usetikzlibrary{svg.path}
 
 \definecolor{vertfonce}{rgb}{0.105,0.349,0.188} % rgb(27,89,48)

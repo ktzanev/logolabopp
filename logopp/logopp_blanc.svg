@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-200 -255 400 510 " width="200px" height="255px" preserveAspectRatio="xMidYMid meet">
+<!-- Handmade by Kroum Tzanev, January 2011  -->
+
+<!--========================== les cercles et les segments ===============================-->
+<g stroke="white" stroke-width="7" stroke-opacity="1" fill="none">
+    <circle r="50"  cx="0" cy="-100" />
+    <circle r="100"  cx="0" cy="-100" />
+    <circle r="150"  cx="0" cy="-100" />
+    <circle r="50"  cx="0" cy="100" />
+    <circle r="100"  cx="0" cy="100" />
+    <circle r="150"  cx="0" cy="100" />
+
+    <path d="M -150,-250 v500 M -100,-250 v500 M 100,-250 v500 M 150,-250 v500" />
+    <path d="M -200,-200 h400 M -200,-150 h400 M -200,150 h400 M -200,200 h400" />
+</g>
+
+<!--====================================== le P  =========================================-->
+<g style="fill:white;fill-opacity:1;stroke:none">
+    <path d="M 0,200 A 100,100 0 0 1 0,0 100,100 0 0 0 0,-200 H -150 V 200 z
+			 M 0,-50 A 150,150 0 0 0 -100,-11.8 V -150 H 0 A 50,50 0 0 1 0,-50 z
+			 M 0,50 A 150,150 0 0 0 100,11.8 V 150 H 0 A 50,50 0 0 1 0,50 z"/>
+</g>
+</svg>

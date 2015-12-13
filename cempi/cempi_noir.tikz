@@ -1,0 +1,10 @@
+% auteur du logo : Kristin Dubrow
+% version tikz : Kroum Tzanev
+% date : 23 janvier 2015
+
+\begin{tikzpicture}
+  % =========== LOGO ===========
+  \begin{scope}[scale=.935,rotate=-95,line width=.7pt]
+    \draw (0:1) foreach \i in {1,...,35} {--(\i*131.45:1)};
+  \end{scope}
+\end{tikzpicture}

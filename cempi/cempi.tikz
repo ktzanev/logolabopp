@@ -1,10 +1,9 @@
 % auteur du logo : Kristin Dubrow
 % version tikz : Kroum Tzanev
 % date : 23 janvier 2015
-\usetikzlibrary{svg.path}
 
-\definecolor{cempiorange}{rgb}{.94024,.33329,.10203} % #F0551A = (240,85,26)
-\definecolor{cempiorangebis}{rgb}{0.851,0.369,0} % #D95E00 = (217,94,0)
+\definecolor{cempiorange}{RGB}{240,85,27} % #F0551A
+% \definecolor{cempiorangebis}{RGB}{217,94,0} % #D95E00
 
 \begin{tikzpicture}
   % =========== LOGO ===========
