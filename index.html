@@ -320,7 +320,7 @@
 
           <!-- C'est parti ! -->
           <div class="form-group">
-            <a class="btn btn-success btn-lg" role="button" ng-href="{{imgurl()}}" download="imgname()">Télécharger</a>
+            <a class="btn btn-success btn-lg" role="button" ng-href="{{imgurl()}}" download="{{imgname()}}">Télécharger</a>
             <a class="btn btn-warning btn-lg" role="button" type="button" ng-show="okimg" ng-click="showimgcode=!showimgcode;showShareLink();">&lt; img &gt;</a>
           </div>
           <div ng-show="showimgcode" class="form-group has-warning">
