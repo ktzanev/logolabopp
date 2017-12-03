@@ -12,9 +12,9 @@ Pour utiliser les macros LaTex il faut inclure la librairie labopp&nbsp;(<code>\
 
 Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez [le télécharger ici](https://ktzanev.github.io/logolabopp/latex/labopp.sty). Vous pouvez le mettre soit avec les autres bibliothèques LaTeX, soit dans le même répertoire que le fichier latex.
 
->**Attention :** 
+>**Attention :**
 >   * Pour que l'en-tête et le pied de page se mettent en place, il faut compiler deux fois.
->   * Si vous avez des problèmes avec la compilation (probablement dus à votre version de Ti*k*Z): 
+>   * Si vous avez des problèmes avec la compilation (probablement dus à votre version de Ti*k*Z):
 >       - il existe une version de [labopp.sty](https://ktzanev.github.io/logolabopp/latex/tikz_v2.1/labopp.sty) compatible avec l'ancienne version 2.1 de Ti*k*Z.
 >       - il existe également une version simplifiée du style [laboppnotikz.sty](https://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty). Pour pouvoir l'utiliser vous avez besoin de deux images en pdf [logonompp.pdf](https://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](https://ktzanev.github.io/logolabopp/latex/labofooter.pdf). Pour l'utilisation de ce style vous pouvez consulter le modèle [exemple_lettre_notikz.tex](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex) (ou sa version [anglaise](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_en.tex)), ainsi que le résultat de la compilation avec pdflatex [exemple_lettre_notikz.pdf](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf).
 
@@ -25,15 +25,15 @@ Si <code>labopp.sty</code> ne fait pas partie de votre distribution, vous pouvez
 
 * Lettre type du labo n'utilisant pas Ti*k*Z
     > Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, [laboppnotikz.sty](https://ktzanev.github.io/logolabopp/latex/laboppnotikz.sty), et des deux images en pdf : [logonompp.pdf](https://ktzanev.github.io/logolabopp/logonompp/logonompp.pdf) et [labofooter.pdf](https://ktzanev.github.io/logolabopp/latex/labofooter.pdf).
-    
+
     * version française :
         - [source LaTeX an ascii](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.tex) à compiler avec PDFLaTeX pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz.pdf);
         - [source LaTeX an UTF8](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_utf8.tex) à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_utf8.pdf);
     * english version : [LaTeX source](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_en.tex) that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_notikz_en.pdf).
-    
+
 * Lettre type du labo utilisant Ti*k*Z
     >  Doit être compilée deux fois pour que l'en-tête et le bas-de-page se mettent en place. Utilise [labopp.sty](https://ktzanev.github.io/logolabopp/latex/labopp.sty).
-    
+
     * version française :
         - [source LaTeX an ascii](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.tex) à compiler avec PDFLaTeX pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre.pdf);
         - [source LaTeX an UTF8](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_utf8.tex) à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en [PDF](https://ktzanev.github.io/logolabopp/latex/exemple_lettre_utf8.pdf);
@@ -52,7 +52,7 @@ Autres
 Dans cette section vous pouvez trouver d'autres fichiers utiles.
 
 * *Logo CNRS* (petit en gris) : l'original en [Ti*k*Z](https://ktzanev.github.io/logolabopp/autres/logocnrsinsmi_gris_petit.tikz), et les bitmaps en [GIF&nbsp;(sur fond blanc)](https://ktzanev.github.io/logolabopp/autres/logocnrsinsmi_gris_petit.gif) et [PNG&nbsp;(avec transparence)](https://ktzanev.github.io/logolabopp/autres/logocnrsinsmi_gris_petit.png).
-* *Logo de l'Université* (petit en gris) : l'original en [Ti*k*Z](https://ktzanev.github.io/logolabopp/autres/logoul1_gris_petit.tikz), et les bitmaps en [GIF&nbsp;(sur fond blanc)](https://ktzanev.github.io/logolabopp/autres/logoul1_gris_petit.gif) et [PNG&nbsp;(avec transparence)](https://ktzanev.github.io/logolabopp/autres/logoul1_gris_petit.png).
+* *Logo de l'Université* (petit en gris) : l'original en [Ti*k*Z](https://ktzanev.github.io/logolabopp/autres/logoul_gris_petit.tikz), et les bitmaps en [GIF&nbsp;(sur fond blanc)](https://ktzanev.github.io/logolabopp/autres/logoul_gris_petit.gif) et [PNG&nbsp;(avec transparence)](https://ktzanev.github.io/logolabopp/autres/logoul_gris_petit.png).
 * *Le pied de page du labo* : en [PNG](https://ktzanev.github.io/logolabopp/doc/labofooter.png) et en [PDF](https://ktzanev.github.io/logolabopp/latex/labofooter.pdf).
 * Icône *téléphone* :l'original en [Ti*k*Z](https://ktzanev.github.io/logolabopp/autres/phone.tikz), et les bitmaps en [GIF&nbsp;(sur fond blanc)](https://ktzanev.github.io/logolabopp/autres/phone.gif) et [PNG&nbsp;(avec transparence)](https://ktzanev.github.io/logolabopp/autres/phone.png).
 * Icône *fax* : l'original en [Ti*k*Z](https://ktzanev.github.io/logolabopp/autres/fax.tikz), et les bitmaps en [GIF&nbsp;(sur fond blanc)](https://ktzanev.github.io/logolabopp/autres/fax.gif) et [PNG&nbsp;(avec transparence)](https://ktzanev.github.io/logolabopp/autres/fax.png).
