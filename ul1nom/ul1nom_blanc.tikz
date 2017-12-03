@@ -4,14 +4,14 @@
 \usetikzlibrary{svg.path}
 
 \begin{tikzpicture}[x=1pt,y=1pt]
-  % Logo et nom (sans zone de protection) 8.42 cm x 3.22 (3.19) cm = 239.6pt x 91.6pt (ou 90.8 sans considère le dépassement de l'accent aigu)
-  % \fill[yellow] (0,0) rectangle (239.6,91.6);
+  % Logo et nom (sans zone de protection) 9.57 cm x 3.19 cm = 272.4pt x 90.8pt (1cm = 28.45275pt)
+  %\fill[yellow] (0,0) rectangle (272.4,90.8);
 
   % zone de protection = 1.36cm = 38.7pt (1cm = 28.45275pt) autour du logo
-  % \path (-38.7,-38.7) rectangle (278.3,130.3);
+  % \path (-38.7,-38.7) rectangle (311.1, 129.5);
   % J'ai réduit cette zone de protection de moitié.
   % zone de protection = 0.68cm = 19.35pt (1cm = 28.45275pt) autour du logo
-  \path (-19.35,-19.35) rectangle (258.95,110.95);
+  \path (-19.35,-19.35) rectangle (291.75, 110.15);
 
   \begin{scope}[white]
 

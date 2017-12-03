@@ -46,9 +46,9 @@
             ]
           },
           {
-            name : "Université (de) Lille 1 : logo",
-            folder : "ul1",
-            base : "ul1",
+            name : "Université de Lille : logo",
+            folder : "ul",
+            base : "ul",
             monochrome : true,
             types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
             resolutions : [
@@ -59,7 +59,7 @@
             ]
           },
           {
-            name : "Université (de) Lille 1 : logo et nom",
+            name : "Université de Lille 1 : logo et nom (avant 2018)",
             folder : "ul1nom",
             base : "ul1nom",
             monochrome : true,
@@ -72,7 +72,20 @@
             ]
           },
           {
-            name : "UFR de Mathématiques : logo et nom",
+            name : "Université de Lille : logo et nom (après 2018)",
+            folder : "ulnom",
+            base : "ulnom",
+            monochrome : true,
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
+            resolutions : [
+              {x:120, y:50},
+              {x:240, y:100},
+              {x:721, y:300},
+              {x:1682, y:700}
+            ]
+          },
+          {
+            name : "UFR de Mathématiques : logo et nom (avant 2018)",
             folder : "ul1ufr",
             base : "ul1ufr",
             monochrome : true,
@@ -82,6 +95,19 @@
               {x:334, y:100},
               {x:1001, y:300},
               {x:2335, y:700}
+            ]
+          },
+          {
+            name : "Département de Mathématiques : logo et nom (après 2018)",
+            folder : "ul-fst-math",
+            base : "ul-fst-math",
+            monochrome : true,
+            types : ["png", "gif", "jpg", "svg", "pdf", "eps", "ps", "tikz"],
+            resolutions : [
+              {x:290, y:50},
+              {x:580, y:100},
+              {x:1739, y:300},
+              {x:4058, y:700}
             ]
           },
           {
@@ -190,13 +216,13 @@
         $scope.setokimg = function() {
           $scope.okimg = isokimg($scope.typedefichier);
         };
-        // renvoie la résolution pour la liste des choix (ex "100 x 300 pixels")
+        // renvoie la résolution pour la liste des choix (ex "300 x 100 pixels")
         $scope.pixels = function(r) {
           return ""+r.x+" x "+r.y+" pixels";
         };
-        // renvoie la résolution pour coller au nom du fichier (ex "_100_300")
+        // renvoie la résolution pour coller au nom du fichier (ex "_100")
         $scope.forfile = function(r) {
-          return "_"+r.x+"_"+r.y;
+          return "_"+r.y;
         };
         // renvoie la résolution pour utiliser dans img (ex "width="100" height="300")
         $scope.imgsize = function(r) {
