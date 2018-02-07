@@ -1,6 +1,10 @@
-% vectorisé par : Kroum Tzanev
-% à partir du fichier PNG officiel
-% date : 28 décembre 2014 (modifié le 26 novembre 2015)
+% Logo de l'Université de Lille
+% --------------------------------
+% La première version était vectorisé à partir du PNG avec potrace 1.11, de Peter Selinger.
+% Cette version est basée sur un PDF officiel de l'Université, converti avec Inkscape, puis modifié avec SVYPathy par K. Tzanev.
+% v1.0 : 28 décembre 2014
+% v1.1 : 26 novembre 2015
+% v1.2 : 7 décembre 2017
 \usetikzlibrary{svg.path}
 
 \begin{tikzpicture}[x=1pt,y=1pt]

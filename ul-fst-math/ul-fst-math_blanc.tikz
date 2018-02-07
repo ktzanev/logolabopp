@@ -1,6 +1,7 @@
-% vectorisé par : Kroum Tzanev
-% à partir du fichier PNG officiel
-% date : 28 décembre 2014 (modifié le 2 décembre 2017)
+% Logo du Département de Mathématiques de l'Université de Lille
+% -------------------------------------------------------------------
+% Cette version est basée sur un PDF officiel de l'Université, converti avec Inkscape, puis modifié avec SVYPathy et à la main par K. Tzanev.
+% v1.0 : 7 décembre 2017
 \usetikzlibrary{svg.path}
 
 \definecolor{hibiscusuniv}{rgb}{0.682,0.145, 0.451} % = #AE2573

@@ -2,11 +2,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="-19.35 -19.35 311.1 129.5">
-  <metadata>
-    Vectorisé à partir du PNG avec potrace 1.11, de Peter Selinger 2001-2013.
-    Puis modifié à la main par K. Tzanev.
-    Date : 28 décembre 2014 (modifié le 02 décembre 2017)
-  </metadata>
+  <title>Logo de l'Université de Lille</title>
+  <desc>
+    La première version était vectorisé à partir du PNG avec potrace 1.11, de Peter Selinger.
+    Cette version est basée sur un PDF officiel de l'Université, converti avec Inkscape, puis modifié avec SVYPathy par K. Tzanev.
+    v1.0 : 28 décembre 2014
+    v1.1 : 26 novembre 2015
+    v1.2 : 7 décembre 2017
+  </desc>
   <!-- Logo + texte (sans zone de protection) 9.57 cm x 3.19 cm = 272.4pt x 90.8pt (1cm = 28.45275pt) -->
   <!-- <rect x="0" y="0" width="272.4" height="90.8" fill="yellow"/> -->
 
