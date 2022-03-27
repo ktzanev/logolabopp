@@ -17,7 +17,7 @@
 \begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
 \documentclass[a4paper,11pt]{article}
 \usepackage[top=21mm,bottom=28mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
-\usepackage{tikz} ! <----------- pas obligatoire car labopp le charge si necessaire
+\usepackage{tikz} ! <----------- pas obligatoire car labopp le charge si nécessaire
 \usepackage{labopp} ! <----------- le package avec les commandes du labo
 \begin{document}
 \laboheader ! <----------- l'en-tête en haut a gauche
@@ -26,7 +26,7 @@
 % ------------------- test ------------------------
 
 \begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
-! ---------------------------------- exemple 1 (valeurs par défaut)
+! ---------------------------------- exemple 1 (logo et nom)
 \logonompp{2}
 \end{Verbatim}
 \logonompp{2}
@@ -42,20 +42,20 @@
 ! ---------------------------------- exemple 3 (la totale)
 \tikzset{
   up/.style={fill=black},
-  down/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv},
+  down/.style={shade, top color=orange chaleureux, bottom color=indigo inclusif},
   border/.style={draw=black},
   circles/.style={draw=gray},
-  textlabo/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv}
+  textlabo/.style={shade, top color=orange chaleureux, bottom color=indigo inclusif}
 }
 \logonompp{2}
 \end{Verbatim}
-{ % dans un groupe les changement de style sont locaux
+{ % dans un groupe les changements de style sont locaux
   \tikzset{
     up/.style={fill=black},
-    down/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv},
+    down/.style={shade, top color=orange chaleureux, bottom color=indigo inclusif},
     border/.style={draw=black},
     circles/.style={draw=gray},
-    textlabo/.style={shade, top color=bleuclaireuniv, bottom color=bleufonceuniv}
+    textlabo/.style={shade, top color=orange chaleureux, bottom color=indigo inclusif}
   }
   \logonompp{2}
 }
@@ -72,7 +72,7 @@
 
 \pagebreak
 
-% ----------------- en tête avec le coordonnées du labo ----------------
+% ----------------- en tête avec les coordonnées du labo ----------------
 \labotextheader
 \vspace{4cm}
 
@@ -80,30 +80,39 @@
 ! ----------------- (l'en-tête avec les coordonnées du labo)
 \labotextheader
 
-! ----------------- Les couleurs définies dans la package :
+! ----------------- Les couleurs définies dans le package :
 \end{Verbatim}
 
 % ----------------- les couleurs ----------------
 \def\drawcolor#1{
-\tikz{\path[fill=#1] (0,0) node[above, rectangle,minimum width=3cm,rounded corners=1mm, draw=#1]{#1} (-1.5,-1) rectangle (1.5,0);}}
+\tikz{\path[fill=#1] (0,0) node[above, rectangle,minimum width=4cm,rounded corners=1mm, draw=#1]{#1} (-2,-1) rectangle (2,0);}}
+
 
 \drawcolor{vertfonce}
 \drawcolor{vertclaire}
 \drawcolor{vertinsmi}
 \drawcolor{hibiscusuniv}
-\vspace{4mm}
+\bigskip
 
-\drawcolor{bleuclaireuniv}
-\drawcolor{bleufonceuniv}
-\drawcolor{noiruniv}
-\drawcolor{grisuniv}
+\drawcolor{bleu horizon}
+\drawcolor{indigo inclusif}
+\drawcolor{bleu evasion}
+\drawcolor{gris statutaire}
+\smallskip
 
-\vfill
-\begin{Verbatim}[defineactive=\def!{\color{orange}\CommentChar}]
-! ----------------- (le bas de page dans le syle de l'Université)
-\labounivfooter ! on peut aussi l'avoir en noir et blanc : \labounivfootermono
-\end{Verbatim}
-\labounivfooter
+\drawcolor{vert nature}
+\drawcolor{vert avenir}
+\drawcolor{vert tendre}
+\drawcolor{gris clair}
+\smallskip
 
+\drawcolor{marron durable}
+\drawcolor{rouge action}
+\drawcolor{rose accueillant}
+\drawcolor{beige serein}
+\smallskip
+
+\drawcolor{orange chaleureux}
+\drawcolor{jaune determine}
 
 \end{document}

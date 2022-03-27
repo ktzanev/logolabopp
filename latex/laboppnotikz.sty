@@ -6,17 +6,14 @@
 %
 %   file : laboppnotikz.sty
 %   author : Kroum Tzanev
-%   versoin : 1.1
-%   date : November 26, 2015
+%   contributors : Serge Dachian
+%   versoin : 3.0
+%   date : March 27, 2022
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% You have to use :
-%   \usepackage[absolute]{textpos}
-%   \usepackage{graphicx}
-%
-% and you need the files :
+% You need the files :
 %   logonompp.pdf
 %   labofooter.pdf
 %
@@ -24,17 +21,93 @@
 %   \usepackage{everypage}
 %  and then for example :
 %   \AddEverypageHook{\laboheader}
+%   \AddThispageHook{\textheader{...}}
 %
 
-% ------------------- univ-lille1 colors ------------------------
+% ------------------- labo colors ------------------------
+\definecolor{vertfonce}{rgb}{0.105,0.349,0.188} % rgb(27,89,48)
+\definecolor{vertclaire}{rgb}{0.25,0.839,0.447} % rgb(64,214,114)
+% ------------------- cnrs colors ------------------------
+\definecolor{vertinsmi}{rgb}{0.33,0.49,0.24}
+% ------------------- univ-lille 2022 colors ------------------------
+% Pantone 2765 C
+% Valeurs CMJN : 100 - 94 - 42 - 64
+% Valeurs RVB : 0 - 0 - 55
+% RAL 5022
+\definecolor{bleu horizon}{HTML}{000037}
+% Pantone 2726 C
+% Valeurs CMJN : 79 - 66 - 0 - 0
+% Valeurs RVB : 88 - 98 - 237
+% RAL 5015
+\definecolor{indigo inclusif}{HTML}{5862ED}
+% Pantone 284 C
+% Valeurs CMJN : 52 - 18 - 0 - 0
+% Valeurs RVB : 122 - 186 - 255
+% RAL 5024
+\definecolor{bleu evasion}{HTML}{7ABAFF}
+% Pantone Cool Gray 11 C
+% Valeurs CMJN : 59 - 47 - 42 - 31
+% Valeurs RVB : 99 - 101 - 106
+% RAL 7046
+\definecolor{gris statutaire}{HTML}{63656A}
+% Pantone 546 C
+% Valeurs CMJN : 94 - 54 - 61 - 70
+% Valeurs RVB : 0 - 45 - 45
+% RAL 6004
+\definecolor{vert nature}{HTML}{002D2D}
+% Pantone 7473 C
+% Valeurs CMJN : 75 - 9 - 54 - 0
+% Valeurs RVB : 50 - 166 - 140
+% RAL 5021
+\definecolor{vert avenir}{HTML}{32A68C}
+% Pantone 352 C
+% Valeurs CMJN : 48 - 0 - 42 - 0
+% Valeurs RVB : 137 - 224 - 177
+% RAL 5018
+\definecolor{vert tendre}{HTML}{89E0B1}
+% Pantone 663 C
+% Valeurs CMJN : 9 - 6 - 7 - 0
+% Valeurs RVB : 237 - 237 - 237
+% RAL 7035
+\definecolor{gris clair}{HTML}{EDEDED}
+% Pantone 4975 C
+% Valeurs CMJN : 59 - 87 - 67 - 84
+% Valeurs RVB : 45 - 5 - 5
+% RAL 8017
+\definecolor{marron durable}{HTML}{2D0505}
+% Pantone 1785 C
+% Valeurs CMJN : 0 - 79 - 52 - 0
+% Valeurs RVB : 252 - 83 - 92
+% RAL 3018
+\definecolor{rouge action}{HTML}{FC535C}
+% Pantone 1895 C
+% Valeurs CMJN : 0 - 41 - 0 - 0
+% Valeurs RVB : 255 - 180 - 210
+% RAL 3015
+\definecolor{rose accueillant}{HTML}{FFB4D2}
+% Pantone 9285 C
+% Valeurs CMJN : 2 - 6 - 14 - 0
+% Valeurs RVB : 250 - 240 - 225
+% RAL 9002
+\definecolor{beige serein}{HTML}{FAF0E1}
+% Pantone 1645 C
+% Valeurs CMJN : 0 - 70 - 72 - 0
+% Valeurs RVB : 255 - 105 - 65
+% RAL 2003
+\definecolor{orange chaleureux}{HTML}{FF6941}
+% Pantone 122 C
+% Valeurs CMJN : 0 - 18 - 77 - 0
+% Valeurs RVB : 255 - 210 - 75
+% RAL 1018
+\definecolor{jaune determine}{HTML}{FFD24B}
+% ------------------- old colors ------------------------
+% for compatibility with version 2
+\definecolor{hibiscusuniv}{rgb}{0.682,0.145, 0.451} % = #AE2573
+% for compatibility with version 1
 \definecolor{bleuclaireuniv}{rgb}{0,0.663,0.878}
 \definecolor{bleufonceuniv}{rgb}{0.086,0.467,0.721}
 \definecolor{noiruniv}{rgb}{0.102,0.090,0.090}
 \definecolor{grisuniv}{rgb}{0.486,0.509,0.509}
-
-\definecolor{vertinsmi}{rgb}{0.33,0.49,0.24}
-\definecolor{vertfonce}{rgb}{0.105,0.349,0.188} % rgb(27,89,48)
-\definecolor{vertclaire}{rgb}{0.25,0.839,0.447} % rgb(64,214,114)
 
 \def\laboheader{
 \begin{textblock*}{42mm}[.34,1](28mm,28mm)
