@@ -145,13 +145,11 @@
 \def\objet#1{\textbf{Objet : }\textit{#1}\vspace{1cm}}
 
 %====================== expediteur ======================
-\newlength{\explen}
-\setlength{\explen}{7cm}
-\newenvironment{expediteur}{
+\newlength{\explen}\setlength{\explen}{7cm}% pour retrocompatibilite
+\newenvironment{expediteur}[1][\explen]{
 \vspace{1cm}
 \hfill
-\begin{minipage}{\explen}
+\begin{minipage}{#1}
 }{
 \end{minipage}
-\vspace{2cm}
 }
