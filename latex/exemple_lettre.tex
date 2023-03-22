@@ -37,26 +37,26 @@
 \labofooter
 % ---------------------------------------------------------- les r\'ef\'erences de l'auteur/exp\'editeur
 \textheader{%
-\textbf{Pr\'enom NOM}\newline
-Ma fonction\newline
-prenom.nom@math.univ-lille.fr\newline
-+33(0)320 43X XXX
+  \textbf{Pr\'enom NOM}\newline
+  Ma fonction\newline
+  prenom.nom@math.univ-lille.fr\newline
+  +33(0)320 43X XXX
 }
 % ---------------------------------------------------------- le destinataire et son adresse
 \begin{destinataire}
-\textbf{prof. Le DESTINATAIRE}\\
-rue de la destination\\
-XXXXX Ville de destination\\
+  \textbf{prof. Le DESTINATAIRE}\\
+  rue de la destination\\
+  XXXXX Ville de destination\\
 \end{destinataire}
 
 % ---------------------------------------------------------- l'objet de la lattre
 \objet{Le bla-bla d'objet de cette lettre!}
 
+\renewcommand{\baselinestretch}{1.3}\selectfont
 % ============================================================= la lettre
 \hspace{4cm}Cher Destinataire,
 \vspace{4mm}
 
-{\setlength{\baselineskip}{1.2\baselineskip}
 Voil\`a l'exemple type d'une lettre du laboratoire.
 
 Les \'El\'ements sont une compilation du savoir g\'eom\'etrique et rest\`erent le noyau de l'enseignement math\'ematique pendant pr\`es de 2000 ans. Il se peut qu'aucun des r\'esultats contenus dans les \'El\'ements ne soit d'Euclide, mais l'organisation de la mati\`ere et son expos\'e lui sont dus.
@@ -64,7 +64,6 @@ Les \'El\'ements sont une compilation du savoir g\'eom\'etrique et rest\`erent l
 Les \'El\'ements sont divis\'es en treize livres. Les livres 1 \`a 6, g\'eom\'etrie plane, les livres 7 \`a 9, th\'eorie des rapports, le livre 10, la th\'eorie de nombres irrationnels d'Eudoxe, et enfin les livres 11 \`a 13 de g\'eom\'etrie dans l'espace. Le livre se termine par l'\'etude des propri\'et\'es des cinq poly\`edres r\'eguliers et une d\'emonstration de leur existence. Les \'El\'ements sont remarquables par la clart\'e avec laquelle les th\'eor\`emes sont \'enonc\'es et d\'emontr\'es.
 
 Plus d'un millier d'\'editions manuscrites des \'El\'ements ont \'et\'e publi\'ees avant la premi\`ere version imprim\'ee en 1482. La rigueur n'y est pas toujours \`a la hauteur des canons actuels, mais la m\'ethode consistant \`a partir d'axiomes, de postulats et de d\'efinitions, pour d\'eduire un maximum de propri\'et\'es des objets consid\'er\'es, le tout dans un ensemble organis\'e, \'etait nouvelle pour l'\'epoque. Les \'El\'ements durent leur succ\`es \`a leur sup\'eriorit\'e d'organisation, de syst\'ematisation et de logique mais pas d'exhaustivit\'e (ni conique, ni r\'esolution par neusis2 ou ajustement). Les derni\`eres recherches entreprises en histoire des math\'ematiques tendent \`a prouver qu'Euclide n'est pas le seul auteur des \'El\'ements. Il \'etait vraisemblablement entour\'e d'un coll\`ege de disciples ayant tous particip\'e \`a leur \'elaboration.
-}
 
 % ---------------------------------------------------------- la signature de l'exp\'editeur \`a mettre au dessus de son nom
 
@@ -73,8 +72,7 @@ Plus d'un millier d'\'editions manuscrites des \'El\'ements ont \'et\'e publi\'e
 Villeneuve d'Ascq, le \today
 
 \begin{expediteur}
-\textbf{Mon pr\'enom MON--NOM}
+  \textbf{Mon pr\'enom MON--NOM}
 \end{expediteur}
-
 
 \end{document}

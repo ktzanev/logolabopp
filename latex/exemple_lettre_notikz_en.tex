@@ -19,6 +19,9 @@
 %
 \documentclass[a4paper,11pt]{article}
 \usepackage[top=42mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
+% \usepackage{mathtools,amssymb,bm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage[english]{babel}
 \usepackage{laboppnotikz}
 
@@ -30,26 +33,26 @@
 \labofooter
 % ---------------------------------------------------------- you
 \textheader{%
-\textbf{First name LAST NAME}\newline
-My position\newline
-prenom.nom@math.univ-lille.fr\newline
-+33(0)320 43X XXX
+  \textbf{First name LAST NAME}\newline
+  My position\newline
+  prenom.nom@math.univ-lille.fr\newline
+  +33(0)320 43X XXX
 }
 % ---------------------------------------------------------- recipient
 \begin{destinataire}
-\textbf{prof. Frodo BAGGINS}\\
-Shire\\
-XXXXX MIDDLE-EARTH\\
+  \textbf{prof. Frodo BAGGINS}\\
+  Shire\\
+  XXXXX MIDDLE-EARTH\\
 \end{destinataire}
 
 \today
 \vspace{1cm}
 
+\renewcommand{\baselinestretch}{1.3}\selectfont
 % ============================================================= the letter
 \hspace{4cm}My Dear Frodo,
 \vspace{4mm}
 
-{\setlength{\baselineskip}{1.2\baselineskip}
 This is an example of a letter of our laboratory.
 
 Euclid's Elements is a mathematical and geometric treatise consisting of 13 books written by the ancient Greek mathematician Euclid in Alexandria, Ptolemaic Egypt c. 300 BC. It is a collection of definitions, postulates (axioms), propositions (theorems and constructions), and mathematical proofs of the propositions.
@@ -57,15 +60,14 @@ Euclid's Elements is a mathematical and geometric treatise consisting of 13 book
 The thirteen books cover Euclidean geometry and the ancient Greek version of elementary number theory. The work also includes an algebraic system that has become known as geometric algebra, which is powerful enough to solve many algebraic problems, including the problem of finding the square root of a number.
 
 The Elements is the second oldest extant Greek mathematical treatises after Autolycus' \emph{On the Moving Sphere}, and it is the oldest extant axiomatic deductive treatment of mathematics. It has proven instrumental in the development of logic and modern science. According to Proclus the term ``element'' was used to describe a theorem that is all-pervading and helps furnishing proofs of many other theorems. The word ``element'' is in the Greek language the same as ``letter''.
-}
+
 
 % ---------------------------------------------------------- your signature
 
 \vspace{1cm}\hspace{5cm}Yours sincerely
 
-\setlength{\explen}{8cm}
-\begin{expediteur}
-\textbf{My--First--Name MY--FAMILY--NAME}
+\begin{expediteur}[8cm]
+  \textbf{My--First--Name MY--FAMILY--NAME}
 \end{expediteur}
 
 \end{document}
