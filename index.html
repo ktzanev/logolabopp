@@ -480,60 +480,62 @@
           </li>
         </ul>
       </div>
-      <p><strong>Exemples :</strong></p>
-      <ul>
-        <li>
-          <p>
-            Utilisation de la bibliothèque <code>labopp</code> : le résultat en <a href="latex/exemple_logo.pdf">PDF</a> et sa source en <a href="latex/exemple_logo.tex">LaTeX</a>.
-          </p>
-          <div class="alert alert-warning" role="alert">
-            Comme <i>fancyvrb</i> a du mal avec les accents, voilà la version en utf-8 compilée avec XeLaTeX : <a href="latex/exemple_logo_utf8.pdf">PDF</a> et la source <a href="latex/exemple_logo_utf8.tex">LaTeX</a>.
+
+        <!-- Exemples d'utilisation de labopp.sty -->
+        <h3>Exemples en LaTeX</h3>
+          <!-- Démo -->
+          <h4>Démonstration de la bibliothèque</h4>
+          <div class="container">
+            Une démonstration de l'utilisation de <code>labopp</code> est visible dans le <a href="latex/exemple_logo.pdf">PDF</a> et sa source en <a href="latex/exemple_logo.tex">LaTeX</a>.
+            <div class="alert alert-warning" role="alert">
+              Comme <i>fancyvrb</i> a du mal avec les accents, voilà la version en utf-8 compilée avec XeLaTeX : <a href="latex/exemple_logo_utf8.pdf">PDF</a> et la source <a href="latex/exemple_logo_utf8.tex">LaTeX</a>.
+            </div>
           </div>
-        </li>
-        <li>
-          <p id="lettre-no-tikz">Lettre type du labo n'utilisant pas Ti<i>k</i>Z</p>
-          <div class="alert alert-warning" role="alert">
-            Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, et des deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>.
-          </div>
-          <ul>
-            <li>version française :
-              <ul>
+          <!-- Lettre type (sans TikZ) -->
+          <h4 id="lettre-no-tikz">Lettre type du labo n'utilisant pas Ti<i>k</i>Z</h4>
+          <div class="container">
+            <ul>
+              <li>version française :
+                <ul>
                   <li><a href="latex/exemple_lettre_notikz.tex">source LaTeX an ascii</a> à compiler avec PDFLaTeX pour obtenir ce résultat en <a href="latex/exemple_lettre_notikz.pdf">PDF</a>;</li>
-                  <li><a href="latex/exemple_lettre_notikz_utf8.tex">source LaTeX en UTF8</a> à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en <a href="latex/exemple_lettre_notikz_utf8.pdf">PDF</a>.</li>
+                  <li><a href="latex/exemple_lettre_notikz_utf8.tex">source LaTeX en UTF8</a> à compiler avec XeLaTeX (de préférence), LuaLaTeX ou PDFLaTeX pour obtenir ce résultat en <a href="latex/exemple_lettre_notikz_utf8.pdf">PDF</a>.</li>
                 </ul>
-            </li>
-            <li>english version : <a href="latex/exemple_lettre_notikz_en.tex">LaTeX source</a> that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in <a href="latex/exemple_lettre_notikz_en.pdf">PDF</a>.</li>
-          </ul>
-          <p></p>
-        </li>
-        <li>
-          <p  id="lettre-tikz">Lettre type du labo utilisant Ti<i>k</i>Z</p>
-          <div class="alert alert-warning" role="alert">
-            Doit être compilée deux fois pour que l'en-tête et le bas-de-page se mettent en place. Utilise <a href="latex/labopp.sty">labopp.sty</a>.
+              </li>
+              <li>english version : <a href="latex/exemple_lettre_notikz_en.tex">LaTeX source</a> that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in <a href="latex/exemple_lettre_notikz_en.pdf">PDF</a>.</li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+              Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, et des deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>.
+            </div>
           </div>
-          <ul>
-            <li>version française :
-              <ul>
+          <!-- Lettre type (avec TikZ) -->
+          <h4  id="lettre-tikz">Lettre type du labo utilisant Ti<i>k</i>Z</h4>
+          <div class="container">
+            <ul>
+              <li>version française :
+                <ul>
                   <li><a href="latex/exemple_lettre.tex">source LaTeX an ascii</a> à compiler avec PDFLaTeX pour obtenir ce résultat en <a href="latex/exemple_lettre.pdf">PDF</a>;</li>
-                  <li><a href="latex/exemple_lettre_utf8.tex">source LaTeX en UTF8 </a> à compiler avec PDFLaTeX, LuaLaTeX ou XeLaTeX (de préférence) pour obtenir ce résultat en <a href="latex/exemple_lettre_utf8.pdf">PDF</a>.</li>
+                  <li><a href="latex/exemple_lettre_utf8.tex">source LaTeX en UTF8 </a> à compiler avec XeLaTeX (de préférence), LuaLaTeX ou PDFLaTeX pour obtenir ce résultat en <a href="latex/exemple_lettre_utf8.pdf">PDF</a>.</li>
                 </ul>
-            </li>
-            <li>english version : <a href="latex/exemple_lettre_en.tex">LaTeX source</a> that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in <a href="latex/exemple_lettre_en.pdf">PDF</a>.</li>
-          </ul>
-          <p></p>
-        </li>
-        <li>
-          <p id="lettre-invitation">Modèle de lettre d'invitation (n'utilisant pas Ti<i>k</i>Z)</p>
-          <div class="alert alert-warning" role="alert">
-            Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, et des deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>.
+              </li>
+              <li>
+                english version : <a href="latex/exemple_lettre_en.tex">LaTeX source</a> that can be compiled with PDFLaTeX, LuaLaTeX ou XeLaTeX (best choice) to obtain this result in <a href="latex/exemple_lettre_en.pdf">PDF</a>.
+              </li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+              Doit être compilée deux fois pour que l'en-tête et le bas-de-page se mettent en place. Utilise <a href="latex/labopp.sty">labopp.sty</a>.
+            </div>
           </div>
-          <ul>
-            <li>version française : <a href="latex/exemple_lettre_invitation_fr.tex">source LaTeX</a> à compiler de préférence avec XeLaTeX pour obtenir ce résultat <a href="latex/exemple_lettre_invitation_fr.pdf">PDF</a>.</li>
-            <li>english version : <a href="latex/exemple_lettre_invitation_en.tex">LaTeX source</a> preferably compiled with XeLaTeX to obtain this result <a href="latex/exemple_lettre_invitation_en.pdf">PDF</a>.</li>
-          </ul>
-          <p></p>
-        </li>
-      </ul>
+          <!-- Lettre d'invitation (sans TikZ) -->
+          <h4 id="lettre-invitation">Modèle de lettre d'invitation (n'utilisant pas Ti<i>k</i>Z)</h4>
+          <div class="container">
+            <ul>
+              <li>version française : <a href="latex/exemple_lettre_invitation_fr.tex">source LaTeX</a> à compiler de préférence avec XeLaTeX pour obtenir ce résultat <a href="latex/exemple_lettre_invitation_fr.pdf">PDF</a>.</li>
+              <li>english version : <a href="latex/exemple_lettre_invitation_en.tex">LaTeX source</a> preferably compiled with XeLaTeX to obtain this result <a href="latex/exemple_lettre_invitation_en.pdf">PDF</a>.</li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+              Pour pouvoir utiliser ce modèle vous avez besoin de la bibliothèque, <a href="latex/laboppnotikz.sty"> laboppnotikz.sty</a>, et des deux images en pdf : <a href="logonompp/logonompp.pdf">logonompp.pdf</a> et <a href="latex/labofooter.pdf">labofooter.pdf</a>.
+            </div>
+          </div>
 
       <!-- Word -->
       <h2 id="word" >Word</h2>
