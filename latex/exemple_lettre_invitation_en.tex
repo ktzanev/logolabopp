@@ -1,0 +1,92 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  customization (examples) :
+%
+%   \setlength{\destlen}{7cm} % width of the destination address
+%   \setlength{\explen}{7cm} % width for your signature name
+%
+%  to put header and/or footer on every page:
+%   \usepackage{everypage}
+%   and then for example :
+%     \AddEverypageHook{\laboheader}
+%     \AddThispageHook{\textheader{...}}
+%  or if you want to put it only on odd pages
+%   \usepackage{everypage}
+%   \usepackage{ifthen}
+%   and then
+%    \AddEverypageHook{\ifthenelse{\isodd{\thepage}}{\laboheader \labofooter}{}}
+%    \AddThispageHook{\textheader{...}}
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage[top=42mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
+% --------------- PDFLaTeX, XeLaTeX ou LuaLaTeX ?
+\usepackage{iftex}
+\ifPDFTeX
+  % --------------- PDFLaTeX ou LaTeX
+  \usepackage[utf8]{inputenc} % pour avoir ce fichier en utf8
+  \usepackage[T1]{fontenc} % pour avoir les lettres accentuées dans le résultat PDF
+  \usepackage{lmodern} % pour utiliser cette police vectorielle (elle utilise l'encodage T1 avec 256 lettres)
+\else
+  % --------------- XeLaTeX ou LuaLaTeX
+  \usepackage{fontspec} % pour le bon encodage des PDFs => police lmodern
+\fi
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{laboppnotikz}
+
+% =========  ↓↓↓  TO BE DEFINED  ↓↓↓  =========
+\def\director{Claire Chainais-Hillairet}% Le directeur du laboratoire
+\def\recipient{Professor First-name Last-name}% Le chercheur à inviter
+\def\address{% Son adresse professionnelle
+Department AA\\
+University BB\\
+Mailing address
+}
+\def\fromdate{Month dd}% date de début, exemple : February 1st
+\def\todate{Month dd, YYYY}% date de fin, exemple : March 15th, 2030
+\def\myself{Professor My-first-name My-last-name}% le nom de l'invitant (vous en général)
+\def\research{proposal subject}% le titre du projet de recherche
+% =========  ↑↑↑  TO BE DEFINED  ↑↑↑  =========
+
+\begin{document}
+\pagestyle{empty}
+% ---------------------------------------------------------- labo's header
+\laboheader
+% ---------------------------------------------------------- labo's footer
+\labofooter
+% ---------------------------------------------------------- you
+\textheader{%
+  \textbf{\director}\newline
+  Directeur Laboratoire Paul Painlevé -- UMR 8524\newline
+  Université de Lille, CNRS\newline
+  direction-painleve@univ-lille.fr\newline
+  +33 320 434 571
+}
+% ---------------------------------------------------------- recipient
+\vspace*{7mm}
+\begin{destinataire}
+  \textbf{\recipient}\\
+  \address
+\end{destinataire}
+
+\today
+\vspace{1cm}
+
+\renewcommand{\baselinestretch}{1.3}\selectfont
+% ============================================================= the letter
+\hspace{4cm}Dear \recipient,
+\vspace{4mm}
+
+We would like to invite you to visit the Laboratoire Paul Painlevé of the University of Lille from \fromdate{} until \todate, in order to carry out research with \myself{} on the \enquote{\research}.
+During your stay, we will be able to provide you an access to our working facilities (office space, internet access, research library).
+We sincerely hope that you will be able to accept this invitation, and we look forward to welcoming you in Lille.
+
+% ---------------------------------------------------------- director's signature
+
+\vspace{1cm}\hspace{5cm}Yours sincerely
+
+\begin{expediteur}[7cm]
+  \textbf{/\director/}
+\end{expediteur}
+
+\end{document}

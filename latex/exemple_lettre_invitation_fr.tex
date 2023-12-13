@@ -1,0 +1,92 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  pour personnaliser (exemples) :
+%
+%   \setlength{\destlen}{7cm} % largeur pour l'adresse du d\'estinataire
+%   \setlength{\explen}{7cm} % largeur pour la signature de l'expeditaur
+%
+%  pour mettre l'en-t\^ete ou/et le pied de page \`a chaque page :
+%   \usepackage{everypage}
+%   et apr\`es par exemple :
+%    \AddEverypageHook{\laboheader}
+%    \AddThispageHook{\textheader{...}}
+%
+%  ou pour mettre que sur les pages impaires
+%   \usepackage{everypage}
+%   \usepackage{ifthen}
+%   et apr\`es
+%    \AddEverypageHook{\ifthenelse{\isodd{\thepage}}{\laboheader \labofooter}{}}
+%    \AddThispageHook{\textheader{...}}
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage[top=42mm,left=28mm,right=21mm,nohead,nofoot]{geometry}
+% --------------- PDFLaTeX, XeLaTeX ou LuaLaTeX ?
+\usepackage{iftex}
+\ifPDFTeX
+  % --------------- PDFLaTeX ou LaTeX
+  \usepackage[utf8]{inputenc} % pour avoir ce fichier en utf8
+  \usepackage[T1]{fontenc} % pour avoir les lettres accentuées dans le résultat PDF
+  \usepackage{lmodern} % pour utiliser cette police vectorielle (elle utilise l'encodage T1 avec 256 lettres)
+\else
+  % --------------- XeLaTeX ou LuaLaTeX
+  \usepackage{fontspec} % pour le bon encodage des PDFs => police lmodern
+\fi
+\usepackage[french]{babel}
+\usepackage{csquotes}
+\usepackage{laboppnotikz}
+
+% =========  ↓↓↓  À DEFINIR  ↓↓↓  =========
+\def\director{Claire CHAINAIS-HILLAIRET}% Le directeur du laboratoire
+\def\recipient{professeur Prénom NOM}% Le chercheur à inviter
+\def\address{% Son adresse professionnelle
+Laboratoire AA\\
+Université BB\\
+Adresse postale
+}
+\def\fromdate{JJ mois}% date de début, exemple : 1\up{er} février
+\def\todate{JJ mois AAAA}% date de fin, exemple : 15 mars 2030
+\def\myself{professeur Mon-prénom MON-NOM}% le nom de l'invitant (vous en général)
+\def\research{projet de recherche}% le titre du projet de recherche
+% =========  ↑↑↑  À DEFINIR  ↑↑↑  =========
+
+\begin{document}
+\pagestyle{empty}
+% ---------------------------------------------------------- l'en-t\^ete du labo
+\laboheader
+% ---------------------------------------------------------- le bas de la page
+\labofooter
+% ---------------------------------------------------------- le directeur (expéditeur)
+\textheader{%
+  \textbf{\director}\newline
+  Directeur Laboratoire Paul Painlevé -- UMR 8524\newline
+  Université de Lille, CNRS\newline
+  direction-painleve@univ-lille.fr\newline
+  +33 320 434 571
+}
+% ---------------------------------------------------------- recipient
+\vspace*{7mm}
+\begin{destinataire}
+  \textbf{\recipient}\\
+  \address
+\end{destinataire}
+
+Villeneuve d'Ascq, le \today
+\vspace{1cm}
+
+\renewcommand{\baselinestretch}{1.3}\selectfont
+% ============================================================= la lettre
+\hspace{4cm}Cher \recipient,
+\vspace{4mm}
+
+Je serai ravi de vous accueillir au Laboratoire Paul Painlevé de l’Université de Lille, du \fromdate{} au \todate, afin de mener des recherches avec \myself{} sur le \enquote{\research}. Durant votre séjour, vous pourrez bénéficier des facilités de notre laboratoire (espace de travail, accès internet, accès à la bibliothèque de recherche).
+J’espère que vous aurez la possibilité de répondre positivement à cette invitation.
+Dans l'attente de recevoir de vos nouvelles, je vous prie d'agréer, cher \recipient, mes sincères salutations.
+
+% ---------------------------------------------------------- la signature du directeur
+\vspace{1cm}
+
+\begin{expediteur}[7cm]
+  \textbf{/\director/}
+\end{expediteur}
+
+\end{document}
