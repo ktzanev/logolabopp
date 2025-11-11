@@ -6,8 +6,8 @@
 %   file : labopp.sty
 %   author : Kroum Tzanev
 %   contributors : Serge Dachian
-%   versoin : 3.0
-%   date : March 27, 2022
+%   versoin : 3.1
+%   date : August 28, 2025
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,14 +33,25 @@
 %   \AddEverypageHook{\laboheader}
 %   \AddThispageHook{\textheader{...}}
 %
+%  with the newer versions of LaTeX use the new LaTeX commands:
+%    \AddToHook{shipout/background}{...}
+%    \AddToHookNext{shipout/background}{...}
+%  instead of
+%     \AddEverypageHook{...}
+%     \AddThispageHook{...}
+%  You can also use the everypage-1x package providing the old code (or just
+%  ignore warnings saying everypage is trying to deliver its original
+%  interface on top of the new commands).
+%
+%
 % ------------------- for babel[french] compatibility --------------------------
 % if babel is loaded (before labopp !!!)
 % and is in french
-% add \NoAutoSpacing; at the begining of every tikz picture
+% add \NoAutoSpacing at the begining of every tikz picture
 \ifx\undefined\addto
 \relax
 \else
-\addto\captionsfrench{\tikzset{every picture/.style={execute at begin picture={\NoAutoSpacing;}}}}
+\addto\captionsfrench{\tikzset{every picture/.style={execute at begin picture={\NoAutoSpacing}}}}
 \fi
 
 % ------------------- labo colors ------------------------
